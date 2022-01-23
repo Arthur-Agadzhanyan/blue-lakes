@@ -1,0 +1,9 @@
+@mixin text($color,$fs:14px,$fw: 400,$lh:auto,) {
+    text-decoration: none;
+    font-family: "Bahnschrift",sans-serif;
+    font-style: normal;
+    font-weight: $fw;
+    font-size: $fs;
+    line-height: $lh;
+    color: $color;
+}

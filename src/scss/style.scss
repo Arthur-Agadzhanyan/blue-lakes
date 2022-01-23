@@ -1,0 +1,159 @@
+@mixin font($font_name, $file_name, $weight, $style) {
+    @font-face {
+        font-family: $font_name;
+        font-display: swap;
+        src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2");
+        font-weight: #{$weight};
+        font-style: #{$style};
+    }
+}
+
+@import "./fonts.scss";
+@import './normalize.scss';
+@import "./mixins.scss";
+@import "./variables.scss";
+
+@import "./animations.scss";
+@import "./_header.scss";
+@import "./_footer.scss";
+
+@import "./modals.scss";
+
+body{
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+.section{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  
+  z-index: 1;
+}
+
+.section__content{
+  margin-top: 96px;
+  flex-grow: 1;
+}
+
+.content__wrapper{
+  padding-left: 140px;
+
+  &-container{
+    padding-right: 140px;
+  }
+}
+
+.intro{
+  z-index: 1;
+
+  .section__content{
+    margin-top: 240px;
+  }
+
+  .intro__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    .content__info {
+      flex: 0 1 60%;
+      .info__suptitle{
+        @include text($grey,24px,300)
+      }
+
+      .info__title{
+        @include text($grey,96px,400,86px);
+        font-style: italic;
+        font-family: 'Bodoni', serif;  
+        margin: 22px 0px;
+      }
+
+      .info__subtitle{
+        @include text($grey,24px);
+        max-width: 386px;
+        margin-bottom: 56px;
+      }
+
+      .info__btn{
+        @include text($yellow_1,24px,600);
+        border: none;
+        padding: 18px 48px;
+        background: $grey;
+        transition: all .2s linear;
+        cursor: pointer;
+        margin-top: 56px;
+
+        &:hover{
+          background: $yellow_1;
+          color: $grey;
+        }
+      }
+    }
+    .content__image {
+      flex: 0 1 30%;
+      padding-right: 220px;
+      position: relative;
+
+      .image_logo{
+        height: 100%;
+      }
+      .image_dots{
+        position: absolute;
+        right: 0;
+        z-index: 1;
+      }
+    }
+  }
+
+  .bottom_images{
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: -1;
+
+    display: flex;
+    justify-content: space-between;
+
+    img{
+      display: block;
+    }
+  }
+}
+
+.first{
+
+
+  background: bisque;
+  overflow-y: auto;
+  z-index: 2;
+}
+
+.second {
+  top: 0;
+  background: yellow;
+  z-index: 3;
+  right: -100vw;
+}
+
+.third {
+  background: #202020;
+  z-index: 4;
+}
+
+.fourth {
+  background: pink;
+  z-index: 5;
+}
+
+.second_btn{
+  font-style: italic;
+  font-family: 'Bodoni Moda', serif;
+
+}
