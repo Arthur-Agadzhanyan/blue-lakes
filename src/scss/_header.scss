@@ -6,6 +6,13 @@
     z-index: 100;
     padding: 0px 15px;
 
+    &-white{
+        .nav__item, .contacts__phone, .contacts__btn{
+            transition: all .7s linear;
+            color: white !important;
+        }
+    }
+
     .navigation__content {
         max-width: 1640px;
         margin: 0 auto;
