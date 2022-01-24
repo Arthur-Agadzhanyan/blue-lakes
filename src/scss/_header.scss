@@ -32,7 +32,8 @@
             .info__nav {
                 .nav__item{
                     margin-left: 64px;
-                    @include text($grey,16px,300)
+                    @include text($grey,16px,300);
+                    transition: color .7s linear;
                 }
             }
         }
@@ -48,6 +49,7 @@
             }
             .contacts__phone {
                 @include text($grey,16px,300);
+                transition: color .7s linear;
             }
             .contacts__btn {
                 padding: 14px 48px;

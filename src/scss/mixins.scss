@@ -6,3 +6,19 @@
     line-height: $lh;
     color: $color;
 }
+
+@mixin button($bg:$grey, $color:$yellow_1, $fs:24px, $hov_color:$grey, $hov_bg:$yellow_1, $border:none, $hov_border: auto){
+    color: $color;
+    font-size: $fs;
+    background: $bg;
+    padding: 17px 48px;
+    border: $border;
+    cursor: pointer;
+    transition: all .2s linear;
+
+    &:hover{
+        color: $hov_color;
+        background: $hov_bg;
+        border-color: $hov_border;
+    }
+}
