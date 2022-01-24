@@ -28,11 +28,19 @@ const avocationsAnim = timeline().fromTo(".avocations", 1.5, {right: "-100vw"}, 
 
 const mapAnim = timeline().fromTo(".map", 1.5, {right: "-100vw"}, {duration: 10, right:"0" });
 
+//------------------
+const cleanNavs = ()=> navItems.forEach((item)=>{
+  item.classList.remove("nav__item-active")
+})
+
 // Menu items onclick animations --------------------------------------------------------------------
 
 navItems[0].addEventListener('click',(e)=>{
     e.preventDefault()
     if(activeScreen !== 1){
+        cleanNavs()
+        e.currentTarget.classList.add("nav__item-active")
+
         introAnim_1.play()
         // introAnim_2.play()
         introAnim_3.play()
@@ -48,6 +56,8 @@ navItems[0].addEventListener('click',(e)=>{
 navItems[1].addEventListener('click',(e)=>{
     e.preventDefault()
     if(activeScreen !== 2){
+      cleanNavs()
+      e.currentTarget.classList.add("nav__item-active")
         if(activeScreen == 0){
             introAnim_1.play()
             // introAnim_2.play()
@@ -65,6 +75,8 @@ navItems[1].addEventListener('click',(e)=>{
 navItems[2].addEventListener('click',(e)=>{
   e.preventDefault()
   if(activeScreen !== 3){
+    cleanNavs()
+    e.currentTarget.classList.add("nav__item-active")
       if(activeScreen == 0){
           introAnim_1.play()
           // introAnim_2.play()
@@ -82,6 +94,8 @@ navItems[2].addEventListener('click',(e)=>{
 navItems[3].addEventListener('click',(e)=>{
   e.preventDefault()
   if(activeScreen !== 4){
+    cleanNavs()
+    e.currentTarget.classList.add("nav__item-active")
       if(activeScreen == 0){
           introAnim_1.play()
           // introAnim_2.play()
@@ -99,6 +113,8 @@ navItems[3].addEventListener('click',(e)=>{
 navItems[4].addEventListener('click',(e)=>{
   e.preventDefault()
   if(activeScreen !== 5){
+    cleanNavs()
+    e.currentTarget.classList.add("nav__item-active")
       if(activeScreen == 0){
           introAnim_1.play()
           // introAnim_2.play()

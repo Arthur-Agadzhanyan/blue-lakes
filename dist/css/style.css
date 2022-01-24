@@ -508,6 +508,10 @@ template {
   transition: color .7s linear;
 }
 
+.navigation .navigation__content .content__info .info__nav .nav__item-active {
+  color: #DFCC93 !important;
+}
+
 .navigation .navigation__content .content__contacts {
   display: -webkit-box;
   display: -ms-flexbox;

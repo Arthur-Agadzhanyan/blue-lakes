@@ -34,6 +34,10 @@
                     margin-left: 64px;
                     @include text($grey,16px,300);
                     transition: color .7s linear;
+
+                    &-active{
+                        color: $yellow_1 !important;
+                    }
                 }
             }
         }
