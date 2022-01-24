@@ -15,7 +15,6 @@
 
 @import "./animations.scss";
 @import "./_header.scss";
-@import "./_footer.scss";
 
 @import "./modals.scss";
 
@@ -671,8 +670,16 @@ body{
   top: 0;
   background: $green_1;
   z-index: 6;
+  right: -100vw;
   overflow-y: auto;
   overflow-x: hidden;
+  
+
+  .section__content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 
   .map__content{
     display: flex;
@@ -692,6 +699,10 @@ body{
 
           &:first-child{
             margin-bottom: 38px;
+          }
+
+          &:last-child{
+            margin-bottom: 0;
           }
 
           .item__img {
@@ -717,6 +728,32 @@ body{
       display: block;
       flex: 0 1 70%;
       height: 65vh;
+    }
+  }
+
+  .footer{
+    padding-top: 30px;
+    padding-bottom: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .logo{
+      width: 50px;
+      img{
+        width: 100%;
+      }
+    }
+
+    .footer__text{
+      span{
+        margin-right: 26px;
+      }
+      span, a{
+        @include text(rgba(255,255,255,.7),14px,300);
+        text-decoration: none;
+      }
     }
   }
 }
