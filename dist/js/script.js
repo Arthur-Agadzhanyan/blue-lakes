@@ -48,6 +48,12 @@ const aboutAnim = timeline().fromTo(".about_complex", 1.5, {right: "-100vw",top:
 
 const roomsAnim = timeline().fromTo(".rooms", 1.5, {right: "-100vw"}, {duration: 10, right:"0" });
 
+const restaurantAnim = timeline().fromTo(".restaurant", 1.5, {right: "-100vw"}, {duration: 10, right:"0" });
+
+const avocationsAnim = timeline().fromTo(".avocations", 1.5, {right: "-100vw"}, {duration: 10, right:"0" });
+
+const mapAnim = timeline().fromTo(".map", 1.5, {right: "-100vw"}, {duration: 10, right:"0" });
+
 // Menu items onclick animations --------------------------------------------------------------------
 
 navItems[0].addEventListener('click',(e)=>{
@@ -80,6 +86,57 @@ navItems[1].addEventListener('click',(e)=>{
         activeScreen = 2
     }
     
+})
+
+navItems[2].addEventListener('click',(e)=>{
+  e.preventDefault()
+  if(activeScreen !== 3){
+      if(activeScreen == 0){
+          introAnim_1.play()
+          // introAnim_2.play()
+          introAnim_3.play()
+          introAnim_4.play()
+      }
+      navigation.classList.remove('navigation-white')
+      restaurantAnim.play()
+
+      activeScreen = 3
+  }
+  
+})
+
+navItems[3].addEventListener('click',(e)=>{
+  e.preventDefault()
+  if(activeScreen !== 4){
+      if(activeScreen == 0){
+          introAnim_1.play()
+          // introAnim_2.play()
+          introAnim_3.play()
+          introAnim_4.play()
+      }
+
+      navigation.classList.remove('navigation-white')
+      avocationsAnim.play()
+
+      activeScreen = 4
+  }
+})
+
+navItems[4].addEventListener('click',(e)=>{
+  e.preventDefault()
+  if(activeScreen !== 5){
+      if(activeScreen == 0){
+          introAnim_1.play()
+          // introAnim_2.play()
+          introAnim_3.play()
+          introAnim_4.play()
+      }
+
+      navigation.classList.add('navigation-white')
+      mapAnim.play()
+
+      activeScreen = 5
+  }
 })
 
 
@@ -137,4 +194,58 @@ const standartComplex = new Swiper('.standartRoom', {
     scrollbar: {
       el: '.swiper-scrollbar',
     },
-});standart
+});
+
+const semiDeluxeRoom = new Swiper('.semiDeluxeRoom', {
+  loop:true,
+  speed: 1500,
+
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  navigation: {
+    nextEl: '#semi-deluxe-next',
+    prevEl: '#semi-deluxe-prev',
+  },
+
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});
+
+const deluxeRoom = new Swiper('.deluxeRoom', {
+  loop:true,
+  speed: 1500,
+
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  navigation: {
+    nextEl: '#deluxe-next',
+    prevEl: '#deluxe-prev',
+  },
+
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});
+
+const restaurantSlider = new Swiper('.restaurantSlider', {
+  loop:true,
+  speed: 1500,
+
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  navigation: {
+    nextEl: '#restaurant-next',
+    prevEl: '#restaurant-prev',
+  },
+
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});
