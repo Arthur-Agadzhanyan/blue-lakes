@@ -101,7 +101,7 @@ body{
 }
 
 .intro{
-  z-index: 1;
+  // z-index: 1;
 
   .section__content{
     margin-top: 240px;
@@ -184,7 +184,7 @@ body{
   right: -100vw;
   overflow-y: auto;
   overflow-x: hidden;
-  z-index: 2;
+  // z-index: 2;
   padding-bottom: 95px;
 
   .place_dots{
@@ -374,7 +374,7 @@ body{
 .rooms {
   right: -100vw;
   overflow-y: auto;
-  z-index: 3;
+  // z-index: 3;
   background: $green_1;
 
   .slider-arrow{
@@ -582,9 +582,10 @@ body{
 }
 
 .restaurant {
+  right: -100vw;
   position: relative;
   background: #fff;
-  z-index: 4;
+  // z-index: 4;
 
   .restaurant__content{
     display: flex;
@@ -644,9 +645,10 @@ body{
 }
 
 .avocations{
+  right: -100vw;
   top: 0;
   background: white;
-  z-index: 5;
+  // z-index: 5;
   min-height: 100vh;
 
   display: flex;
@@ -696,7 +698,7 @@ body{
 .map{
   top: 0;
   background: $green_1;
-  z-index: 6;
+  // z-index: 6;
   right: -100vw;
   overflow-y: auto;
   overflow-x: hidden;
