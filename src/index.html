@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
   <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.min.css">
 
 </head>
@@ -57,9 +58,9 @@
 
       <div class="content__wrapper content__wrapper-container">
         <div class="places__content">
-          <div class="content__slider">
+          <div  class="content__slider">
 
-            <div class="placesSlider">
+            <div id="places-slider" class="placesSlider">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
                   <img src="img/places/slider/1.png" alt="">
@@ -74,7 +75,7 @@
             <div id="places-next" class="swiper-button-next slider-arrow slider-next"></div>
           </div>
 
-          <div class="content__info">
+          <div class="content__info" id="places-info">
             <h2 class="section__title">Уникальные места</h2>
             <p class="section__text">В Черекском районе Кабардино-Балкарии всего лишь в 50 километрах от Нальчика, в
               долине реки Черек-Балкарский расположились пять карстовых озёр, которые называются Голубыми.</p>
@@ -239,9 +240,9 @@
     <div class="rooms__block">
       <div class="rooms__container">
 
-        <div class="block__info">
+        <div class="block__info" >
           <div class="info__header">
-            <h3 class="header__suptitle">Номер категории </h3>
+            <h3 class="header__suptitle" data-aos="fade-right">Номер категории </h3>
             <h2 class="section__title section__title-white">Стандарт</h2>
             <h3 class="header__subtitle">Двухместный номер</h3>
           </div>
@@ -273,7 +274,7 @@
           </div>
 
           <p class="section__text section__text-white">Гостям предоставляются бесплатные туалетно-косметические
-            принадлежности и фен. Номера данной категории расположены на 1, 2 и 3 этажах. Вид из номера на озеро и
+            принадлежности и фен. Номера данной категории расположены на 1, 2 и 3 этажах. Вид из номера на озеро и
             прилегающую террриторию</p>
 
           <div class="bathroom">
@@ -604,7 +605,7 @@
   <section class="section restaurant">
     <div class="section__content">
       <div class="content__wrapper content__wrapper-container">
-        <div class="restaurant__content">
+        <div id='restaurant_content' class="restaurant__content">
 
           <div class="content__slider">
 
@@ -651,32 +652,32 @@
           <h2 class="section__title">Развлечения</h2>
 
         <div class="avocations__list">
-            <div class="list__item">
+            <div class="list__item avocation_block">
               <h3 class="item__name">Квадроциклы</h3>
               <img class="item__image" src="img/avocations/1.png" alt="">
             </div>
 
-            <div class="list__item">
+            <div class="list__item avocation_block_1s">
               <h3 class="item__name">Ужины</h3>
               <img class="item__image" src="img/avocations/2.png" alt="">
             </div>
 
-            <div class="list__item">
+            <div class="list__item avocation_block">
               <h3 class="item__name">Бильярд</h3>
               <img class="item__image" src="img/avocations/3.png" alt="">
             </div>
 
-            <div class="list__item">
+            <div class="list__item avocation_block">
               <h3 class="item__name">Бильярд</h3>
               <img class="item__image" src="img/avocations/4.png" alt="">
             </div>
 
-            <div class="list__item">
+            <div class="list__item avocation_block_1s">
               <h3 class="item__name">Ужины</h3>
               <img class="item__image" src="img/avocations/5.png" alt="">
             </div>
 
-            <div class="list__item">
+            <div class="list__item avocation_block">
               <h3 class="item__name">Бильярд</h3>
               <img class="item__image" src="img/avocations/6.png" alt="">
             </div>
@@ -750,7 +751,10 @@
     </div>
   </section>
 
+  
   <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
   <script src="js/script.js"></script>
 </body>
 
