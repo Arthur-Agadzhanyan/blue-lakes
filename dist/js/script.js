@@ -72,6 +72,10 @@ const cleanNavs = ()=> navItems.forEach((item)=>{
   item.classList.remove("nav__item-active")
 })
 
+gsap.registerPlugin(ScrollTrigger)
+
+
+
 // Menu items onclick animations --------------------------------------------------------------------
 
 navItems[0].addEventListener('click',(e)=>{
@@ -88,6 +92,65 @@ navItems[0].addEventListener('click',(e)=>{
         aboutAnim.play()
         placesAnim_1.play()
         placesAnim_2.play()
+
+        gsap.to('.text_bot',{
+          scrollTrigger: {
+            trigger: '.ab_cont',
+            scroller: '.about_complex',
+            start: 'center bottom '
+          },
+          duration: 1,
+          transform: "translate(0%,0%)"
+        })
+
+        gsap.to('#aboutComplexSlider',{
+          scrollTrigger: {
+            trigger: '.ab_cont',
+            scroller: '.about_complex',
+            start: 'center bottom '
+          },
+          duration: 1,
+          transform: "translate(0%,0%)"
+        })
+
+        gsap.to('.places_img',{
+          scrollTrigger: {
+            trigger: '.places_img',
+            scroller: '.about_complex',
+            start: 'bottom bottom ',
+            end: 'bottom center',
+            scrub: 1,
+            markers: true
+          },
+          duration: 1,
+          transform: "translate(0%,10%)"
+        })
+
+        gsap.to('.places_img_second',{
+          scrollTrigger: {
+            trigger: '.places_img',
+            scroller: '.about_complex',
+            start: 'bottom bottom ',
+            end: 'bottom center',
+            scrub: 1,
+            markers: true
+          },
+          duration: 1,
+          transform: "translate(0%,15%)"
+        })
+
+        gsap.to('.places_img_third',{
+          scrollTrigger: {
+            trigger: '.places_img',
+            scroller: '.about_complex',
+            start: 'bottom bottom ',
+            end: 'bottom center',
+            scrub: 1,
+            markers: true
+          },
+          duration: 1,
+          transform: "translate(0%,5%)"
+        })
 
         activeScreen = 1
     }
