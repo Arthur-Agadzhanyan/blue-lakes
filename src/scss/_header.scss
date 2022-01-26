@@ -76,5 +76,180 @@
         }
         
     }
+    @media screen and (max-width: 1100px) {
+        display: none;
+    }
+}
+
+.mobile_navigation{
+    display: none;
+    align-items: center;
+    position: sticky;
+    top:0;
+    z-index: 10000000;
+    background: transparent;
+    padding: 24px 34px;
+
+    .navigation__logo{
+        // max-width: 40px;
+        position: absolute;
+        top: 9px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .burger{
+        position: relative;
+        width: 30px;
+        height: 20px;
+        margin-left: auto;
+
+        background: transparent;
+        border: 0;
+        cursor: pointer;
+
+        &__line{
+            position: absolute;
+            left: 0;
+
+            width: 100%;
+            height: 2px;
+            background-color: #000;
+
+            transition: all .3s linear;
+
+           &_first{
+            top: 0;
+           }
+
+           &_second, &_third{
+            top: 50%;
+            transform: translateY(-50%);
+           }
+
+           &_fourth{
+            bottom:0;
+           }
+        }
+
+        &_active{
+            .burger__line_first, .burger__line_fourth{
+                opacity: 0;
+            }
+
+            .burger__line_second{
+                transform: translateY(-50%) rotate(45deg);
+                background-color: $yellow_1;
+            }
+
+            .burger__line_third{
+                transform: translateY(-50%) rotate(-45deg);
+                background-color: $yellow_1;
+            }
+        }
+
+        
+    }
+    .burger:hover{
+        .burger__line{
+            background-color: $yellow_1;
+        }
+    }
+
+    @media screen and (max-width: 1100px) {
+        display: flex;
+        
+    }
+}
+
+.mb_bar_closed{
+    top: -150vh !important;   
+}
+
+.mobile_bar{
+    display: none;
+    position: fixed;
+    top: 0px;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    min-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    background: $green_1;
     
+    transition: all .5s linear;
+
+    a{
+        text-decoration: none;
+    }
+    @media screen and (max-width: 1100px) {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navbar__list{
+        width: 100%;
+        height: 100%;
+        padding-top: 120px;
+        text-align: center;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        transition: all .2s linear;
+
+        .list__btn{
+            padding: 13px 37px;
+            border: none;
+            @include text($grey,18px,600);
+            margin-bottom: 80px;
+        }
+
+        .list__item {
+            @include text(#fff,24px,300);
+            position: relative;
+            transition: all .2s linear;
+            list-style: none;
+        }
+
+        .list__link{
+            margin-bottom: 40px;
+            transition: all .2s linear;
+            &:last-child{
+                li::after{
+                    display: none;
+                }
+            }
+        }
+
+        .list__link-active{
+            transition: all .2s linear;
+            pointer-events: none;
+            li{
+                color: $grey;
+            }
+        }
+
+    }
+
+    .navbar__phone{
+        transition: all .2s linear;
+        @include text(#fff,26px,300);
+        text-align: center;
+        margin-bottom: 60px;
+    }
+
+    .list__inst{
+        img{
+            width: 40px;
+        }
+    }
+    
+}
+
+.bot_0{
+    bottom: 0 !important;
 }
