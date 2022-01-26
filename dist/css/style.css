@@ -566,6 +566,8 @@ template {
 body {
   padding: 0;
   margin: 0;
+  height: 100vh;
+  width: 100vw;
   overflow: hidden;
   font-family: "Bahnschrift",sans-serif;
 }
@@ -652,6 +654,10 @@ body {
 
 .slider-prev::after {
   margin-left: -52px;
+}
+
+.intro {
+  overflow: hidden;
 }
 
 .intro .section__content {
@@ -773,6 +779,7 @@ body {
   overflow-y: auto;
   overflow-x: hidden;
   padding-bottom: 95px;
+  display: none;
 }
 
 .about_complex .place_dots {
@@ -1029,6 +1036,7 @@ body {
   right: -100vw;
   overflow-y: auto;
   background: #306261;
+  display: none;
 }
 
 .rooms .slider-arrow::after {
@@ -1316,6 +1324,8 @@ body {
   right: -100vw;
   position: relative;
   background: #fff;
+  overflow: hidden;
+  display: none;
 }
 
 .restaurant .restaurant__content {
@@ -1418,6 +1428,7 @@ body {
   top: 0;
   background: white;
   min-height: 100vh;
+  overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1425,6 +1436,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  display: none;
 }
 
 .avocations .section__content {
@@ -1497,8 +1509,8 @@ body {
   top: 0;
   background: #306261;
   right: -100vw;
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow: hidden;
+  display: none;
 }
 
 .map .section__content {

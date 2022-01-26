@@ -44,7 +44,7 @@ const navLogo = document.querySelector(".nav_logo")
 // animations --------------------------------------------------------------------------
 
 
-const aboutAnim = ()=> timeline().fromTo(".about_complex", 1.5, {right: "-100vw",top:0,left:"initial",background:"white"}, {duration: 10, right:0 }).play();
+const aboutAnim = ()=> timeline().fromTo(".about_complex", 1.5, {right: "-100vw",top:0,left:"initial",background:"white"}, {duration: 10, right:0,display: 'block'  }).play();
 
 const placesAnim_1 = ()=> timeline().fromTo("#places-slider", 1, 
 {transform: 'scale(0.4)' + ' translate(65%,35%)'}, 
@@ -56,13 +56,13 @@ const placesAnim_2 = ()=> timeline().fromTo("#places-info", 1.5,
 
 
 
-const roomsAnim = () => timeline().fromTo(".rooms", 1.5, {right: "-100vw", left:'initial'}, {duration: 10, right:"0vw" }).play();
+const roomsAnim = () => timeline().fromTo(".rooms", 1.5, {right: "-100vw", left:'initial'}, {duration: 10, right:"0vw",display:'block' }).play();
 
-const restaurantAnim = ()=> timeline().fromTo(".restaurant", 1.5, {right: "-100vw", left:'initial'}, {duration: 10, right:"0" }).play();
+const restaurantAnim = ()=> timeline().fromTo(".restaurant", 1.5, {right: "-100vw", left:'initial'}, {duration: 10, right:"0",display:'block' }).play();
 
-const avocationsAnim = ()=> timeline().fromTo(".avocations", 1.5, {right: "-100vw", left:'initial'}, {duration: 10, right:"0" }).play();
+const avocationsAnim = ()=> timeline().fromTo(".avocations", 1.5, {right: "-100vw", left:'initial'}, {duration: 10, right:"0",display:'flex' }).play();
 
-const mapAnim = ()=> timeline().fromTo(".map", 1.5, {right: "-100vw", left:'initial'}, {duration: 10, right:"0" }).play();
+const mapAnim = ()=> timeline().fromTo(".map", 1.5, {right: "-100vw", left:'initial'}, {duration: 10, right:"0",display:'block' }).play();
 
 const restaurantContentAnim = ()=>timeline().fromTo("#restaurant_content", 1.7, {transform: "translate(45%,0%)"}, {duration: 10,transform: "translate(0%,0%)" }).play();
 
@@ -76,7 +76,7 @@ gsap.registerPlugin(ScrollTrigger)
 // swipe----------------------------
 
 const swipeIntro = ()=>{
-  const introAnim_1 = timeline().fromTo(".intro", 1.5, {left: "0",right:"0"}, {duration: 10, left:"-100vw" });
+  const introAnim_1 = timeline().fromTo(".intro", 1.5, {left: "0",right:"0"}, {duration: 10, left:"-100vw",display:'none' });
   // const introAnim_2 = timeline().fromTo("#intro_text", 1.5, {marginLeft: 0}, {marginLeft: "0%"});
   const introAnim_3 = timeline().fromTo("#intro_img", 1, {marginLeft: 0}, {marginLeft: "-100%"});
   const introAnim_4 = timeline().fromTo("#intro_dots", 1.5, {right: 0}, {right: "-280px",top: "100%", position: "absolute", opacity: 0});
@@ -91,30 +91,33 @@ const swipeAbout = (bg='auto')=> timeline().fromTo(".about_complex", 2, {right: 
 // close ---------------------------
 
 const closeRooms = () => {
-  timeline().to(".rooms", 1.5, {duration: 10,right:"-100vw",left:"initial"}).play();
+  timeline().to(".rooms", 1.5, {duration: 10,right:"-100vw",left:"initial",display:'none' }).play();
 }
 
 const closeRestaurant = ()=>{
-  timeline().to(".restaurant", 1.5, {duration: 10,right:"-100vw",left:"initial"}).play();
+  timeline().to(".restaurant", 1.5, {duration: 10,right:"-100vw",left:"initial",display:'none' }).play();
 }
 
 const closeAvocations = ()=>{
-  timeline().to(".avocations", 1.5, {duration: 10,right:"-100vw",left:"initial"}).play();
+  timeline().to(".avocations", 1.5, {duration: 10,right:"-100vw",left:"initial",display:'none' }).play();
 }
 
 const closeMap = ()=>{
-  timeline().to(".map", 1.5, {duration: 10,right:"-100vw",left:"initial"}).play();
+  timeline().to(".map", 1.5, {duration: 10,right:"-100vw",left:"initial",display:'none' }).play();
 }
 
 const closeBlock = (block)=>{
-  timeline().to(block, 1.5, {duration: 10,right:"-100vw",left:"initial"}).play();
+  timeline().to(block, 1.5, {duration: 10,right:"-100vw",left:"initial",display:'none' }).play();
 }
 
 // reverce -------
-const reverceAbout = () => timeline().fromTo(".about_complex", 1.5, {left: "-100vw",top:0}, {duration: 10, left:0, background:'white' }).play();
-const reverceRooms = () => timeline().fromTo(".rooms", 1.5, {left: "-100vw",top:0}, {duration: 10, left:0, background:'white' }).play();
+const reverceAbout = () => timeline().fromTo(".about_complex", 1.5, {left: "-100vw",top:0}, {duration: 10, left:0, background:'white',display:'block'  }).play();
+const reverceRooms = () => timeline().fromTo(".rooms", 1.5, {left: "-100vw",top:0}, {duration: 10, left:0, background:'white',display:'block'  }).play();
+const reverceAvocations = () => timeline().fromTo(".avocations", 1.5, {left: "-100vw",top:0}, {duration: 10, left: 0, background:'white',display:'flex'}).play();
 
-const reverceBlock = (block) => timeline().fromTo(block, 1.5, {left: "-100vw",top:0}, {duration: 10, left: 0, background:'white' }).play();
+const reverceBlock = (block) => {
+  timeline().fromTo(block, 1.5, {left: "-100vw",top:0}, {duration: 10, left: 0, background:'white',display:'block'}).play();
+}
 
 // Menu items onclick animations --------------------------------------------------------------------
 
@@ -336,7 +339,7 @@ navItems[3].addEventListener('click',(e)=>{
 
       if(activeScreen == 5){
         closeMap()
-        reverceBlock('.avocations');
+        reverceAvocations();
       }
       
       navigation.classList.remove('navigation-white')

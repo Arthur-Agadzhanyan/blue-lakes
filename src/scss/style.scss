@@ -21,7 +21,10 @@
 body{
   padding: 0;
   margin: 0;
+  height: 100vh;
+  width: 100vw;
   overflow: hidden;
+
   font-family: "Bahnschrift",sans-serif;
 }
 
@@ -102,6 +105,7 @@ body{
 
 .intro{
   // z-index: 1;
+  overflow: hidden;
 
   .section__content{
     margin-top: 240px;
@@ -180,12 +184,15 @@ body{
   }
 }
 
+// О комплексе =========================
 .about_complex{
   right: -100vw;
   overflow-y: auto;
   overflow-x: hidden;
   // z-index: 2;
   padding-bottom: 95px;
+
+  display: none;
 
   .place_dots{
     position: absolute;
@@ -371,11 +378,14 @@ body{
   }
 }
 
+// Номера ===========================
 .rooms {
   right: -100vw;
   overflow-y: auto;
   // z-index: 3;
   background: $green_1;
+
+  display: none;
 
   .slider-arrow{
     &::after{
@@ -581,11 +591,15 @@ body{
   
 }
 
+// Ресторан =========================
 .restaurant {
   right: -100vw;
   position: relative;
   background: #fff;
   // z-index: 4;
+  overflow: hidden;
+
+  display: none;
 
   .restaurant__content{
     display: flex;
@@ -644,15 +658,19 @@ body{
   }
 }
 
+// Развлечения ==========================
 .avocations{
   right: -100vw;
   top: 0;
   background: white;
   // z-index: 5;
   min-height: 100vh;
+  overflow: hidden;
 
   display: flex;
   flex-direction: column;
+
+  display: none;
 
   .section__content{
     margin-top: 190px;
@@ -695,15 +713,15 @@ body{
   
 }
 
+// Как нас найти =========================
 .map{
   top: 0;
   background: $green_1;
   // z-index: 6;
   right: -100vw;
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow: hidden;
   
-
+display: none;
   .section__content{
     display: flex;
     flex-direction: column;
