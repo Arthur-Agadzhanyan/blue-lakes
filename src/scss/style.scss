@@ -47,6 +47,10 @@ body{
   &-white{
     color: white;
   }
+
+  @media screen and (max-width: 1300px){
+    font-size: 38px;
+  }
 }
 
 .section__text{
@@ -54,6 +58,10 @@ body{
 
   &-white{
     color: white;
+  }
+  @media screen and (max-width: 1300px){
+    font-size: 18px;
+    line-height: auto;
   }
 }
 
@@ -67,7 +75,20 @@ body{
 
   &-container{
     padding-right: 140px;
+    @media screen and (max-width: 1650px) {
+      padding-right: 90px;
+    }
+    @media screen and (max-width: 1350px) {
+      padding-right: 60px;
+    }
   }
+
+    @media screen and (max-width: 1650px) {
+      padding-left: 90px;
+    }
+    @media screen and (max-width: 1350px) {
+      padding-left: 60px;
+    }
 }
 
 .slider-arrow{
@@ -109,6 +130,10 @@ body{
 
   .section__content{
     margin-top: 240px;
+
+    @media screen and (max-width:1400px){
+      margin-top: 178px;
+    }
   }
 
   .intro__content {
@@ -127,6 +152,20 @@ body{
         font-style: italic;
         font-family: 'Bodoni', serif;  
         margin: 22px 0px;
+
+        @media screen and (max-width: 1870px) {
+          @include text($grey,80px,400,auto);
+        }
+
+        @media screen and (max-width: 1650px) {
+          @include text($grey,70px,400,auto);
+        }
+        @media screen and (max-width:1300px){
+          @include text($grey,60px,400,auto);
+        }
+        @media screen and (max-width:1150px){
+          @include text($grey,50px,400,auto);
+        }
       }
 
       .info__subtitle{
@@ -148,8 +187,17 @@ body{
           background: $yellow_1;
           color: $grey;
         }
+
+        @media screen and (max-width:1500px){
+          margin-top: 15px;
+        }
+      }
+
+      @media screen and (max-width:1150px){
+        flex: 0 1 54%;
       }
     }
+
     .content__image {
       flex: 0 1 30%;
       padding-right: 220px;
@@ -158,11 +206,44 @@ body{
       .image_logo{
         height: 100%;
       }
+
       .image_dots{
         position: absolute;
         right: 0;
         z-index: -1;
       }
+
+      @media screen and (max-width: 1650px) {
+        flex: 0 1 25%;
+        padding-right: 140px;
+
+        .image_dots{
+
+          transform: translateX(50%);
+        }
+      }
+
+      @media screen and (max-width:1300px){
+        flex: 0 1 35%;
+        padding-right: 60px;
+        .image_logo{
+          width: 100%;
+        }
+        .image_dots{
+          display: none;
+        }
+      }
+
+      @media screen and (max-width:1150px){
+        flex: 0 1 45%;
+        .image_logo{
+          width: 90%;
+        }
+      }
+    }
+
+    @media screen and (max-width:1300px){
+      align-items: center;
     }
   }
 
@@ -179,7 +260,20 @@ body{
 
     img{
       display: block;
-      max-height: 380px;
+      
+
+      @media screen and (min-width: 1100px) and (max-height: 980px){
+        max-height: 380px;
+      }
+      @media screen and (min-width: 1100px) and (max-height: 900px){
+        max-height: 300px;
+      }
+      @media screen and (min-width: 1100px) and (max-height: 770px){
+        max-height: 230px;
+      }
+      // @media screen and (min-width: 1100px) and (max-width: 1500px){
+      //   max-height: 100px;
+      // }
     }
   }
 }
@@ -191,8 +285,9 @@ body{
   overflow-x: hidden;
   // z-index: 2;
   padding-bottom: 95px;
+  // display: none;
 
-  display: none;
+  
 
   .place_dots{
     position: absolute;
@@ -205,7 +300,11 @@ body{
   }
 
   .places{
-    margin-bottom: 83px;
+    padding-bottom: 5vh;
+
+    @media screen and (min-width: 1750px) and (max-height:800px){
+      margin-bottom: 50px
+    }
   }
 
   .places__content{
@@ -223,6 +322,9 @@ body{
       .placesSlider {
         width: 100%;
         overflow: hidden;
+        img{
+          width: 100%;
+        }
       }
     }
     
@@ -270,7 +372,11 @@ body{
               margin-right: 13px;
             }
             .item__title {
-              @include text($grey,18px,normal,90%)
+              @include text($grey,18px,normal,90%);
+
+              @media screen and (max-width: 1350px) {
+                @include text($grey,16px,normal,90%);
+              }
             }
             .item__info {
               .item__gorge {
@@ -284,8 +390,19 @@ body{
             }
             
           }
+          @media screen and (max-width: 1250px){
+            max-width: 100%;
+            margin-top: 20px
+          }
         }
       }
+    }
+
+    @media screen and (max-width: 1650px) {
+      padding-right: 40px;
+    }
+    @media screen and (max-width: 1450px) {
+      padding-right: 0px;
     }
   }
 
@@ -374,6 +491,15 @@ body{
       display: block;
       margin-right: 16px;
       max-height: 380px;
+      @media screen and (min-width: 1100px) and (max-height: 980px){
+        max-height: 380px;
+      }
+      @media screen and (min-width: 1100px) and (max-height: 900px){
+        max-height: 300px;
+      }
+      @media screen and (min-width: 1100px) and (max-height: 770px){
+        max-height: 230px;
+      }
     }
   }
 }
@@ -405,15 +531,23 @@ body{
 
   .rooms__block{
     // position: relative;
-    min-height: 102vh;
+    height: 104vh;
     position: sticky;
     top: 0;
     background: $green_1;
 
-    bottom: 0;
+    // bottom: 0;
     left: 0;
     right: 0;
     position: sticky;
+    overflow-y: visible;
+    // overflow-y: auto;
+    overflow-x:  hidden;
+    padding-bottom: 20px;
+
+    &::-webkit-scrollbar {
+      width: 0;
+    }
     
     $count: 5;
     @for $i from 1 through 5 {
@@ -430,6 +564,32 @@ body{
 
       display: flex;
       justify-content: space-between;
+
+
+      @media screen and (max-width: 1650px) {
+        padding-left: 90px;
+        padding-right: 60px;
+      }
+      @media screen and (max-width: 1350px) {
+        align-items: center;
+        padding-left: 60px;
+        padding-right: 40px;
+      }
+
+      @media screen and (max-width: 1300px){
+        flex-wrap: wrap;
+        padding-bottom: 40px;
+
+        .block__slider{
+          flex: 0 1 70%;
+          order: 1;
+          margin-bottom: 50px
+        }
+        .block__info{
+          order: 2;
+          flex: 0 1 70%;
+        }
+      }
     }
 
     .block__info {
@@ -512,6 +672,12 @@ body{
 
       .semiDeluxeRoom, .standartRoom, .deluxeRoom{
         overflow: hidden;
+
+        img{
+          @media screen and (max-width: 1350px){
+            width: 100%;
+          }
+        }
       }
 
       .room__check {
@@ -537,6 +703,20 @@ body{
               color: $yellow_1;
             }
           }
+
+          @media screen and (max-width: 1350px){
+            .info__text {
+              @include text(#fff,14px,300,140%);
+            }
+            .info__price {
+              @include text(#fff,28px,400,140%);
+              .price__rub{
+                color: $yellow_1;
+              }
+            }
+
+          }
+          
         }
         
         .check__btn {
@@ -555,6 +735,17 @@ body{
             color: white;
           }
         }
+
+        @media screen and (max-width: 1500px){
+          left: -150px;
+          
+        }
+
+        @media screen and (max-width: 1350px){
+          text-align:left;
+            left: -20px;
+            bottom: -10px;
+        }
       }
       
     }
@@ -563,6 +754,10 @@ body{
       position: absolute;
       bottom: 13px;
       right: -100px;
+
+      @media screen and (max-width: 1300px){
+        display: none;
+      }
     }
 
     .bottom_images{
@@ -572,13 +767,23 @@ body{
   
       display: flex;
       align-items: flex-end;
-  
+      z-index: -1;
       img{
         display: block;
         margin-left: 15px;
       }
+      @media screen and (max-width: 1300px){
+        bottom: initial;
+        top: 0;
+        align-items: flex-start;
+      }
     }
 
+
+    @media screen and (max-width: 1300px){
+      position: relative;
+      height: auto;
+    }
   }
 
   .semi_deluxe_room{
@@ -637,6 +842,13 @@ body{
         .buttons__bar {
           @include button($green_2);
           margin-left: 18px;
+
+          @media screen and (max-width: 1270px){
+            display: block;
+            margin-left: 0px;
+            margin-top: 10px
+          }
+
         }
       }
       
@@ -650,10 +862,21 @@ body{
       z-index: -1;
 
       display: flex;
+      align-items: flex-end;
 
       img{
         display: block;
         margin-right: 16px;
+
+        @media screen and (min-width: 1100px) and (max-height: 980px){
+          max-width: 380px;
+        }
+        @media screen and (min-width: 1100px) and (max-height: 900px){
+          max-width: 300px;
+        }
+        @media screen and (min-width: 1100px) and (max-height: 770px){
+          max-width: 230px;
+        }
       }
   }
 }
@@ -720,8 +943,10 @@ body{
   // z-index: 6;
   right: -100vw;
   overflow: hidden;
+  overflow-y: auto;
   
-display: none;
+  display: none;
+
   .section__content{
     display: flex;
     flex-direction: column;
@@ -761,13 +986,25 @@ display: none;
               display: block;
               margin-top: 12px;
             }
+            @media screen and (max-width: 1300px){
+              @include text(#fff,20px,400);
+            }
           }
 
           .item__phone{
             @include text(#fff,36px,400);
+            @media screen and (max-width: 1300px){
+              @include text(#fff,24px,400);
+            }
           }
 
         }
+      }
+      @media screen and (max-width: 1550px){
+        flex: 0 1 35%;
+      }
+      @media screen and (max-width: 1250px){
+        flex: 0 1 40%;
       }
     }
 
@@ -775,6 +1012,13 @@ display: none;
       display: block;
       flex: 0 1 70%;
       height: 65vh;
+
+      @media screen and (max-width: 1550px){
+        flex: 0 1 60%;
+      }
+      @media screen and (max-width: 1250px){
+        flex: 0 1 55%;
+      }
     }
   }
 

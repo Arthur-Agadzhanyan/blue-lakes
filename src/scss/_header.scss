@@ -27,7 +27,7 @@
             align-items: center;
 
             .info__logo {
-
+                cursor: pointer;
             }
             .info__nav {
                 .nav__item{
@@ -37,6 +37,9 @@
 
                     &-active{
                         color: $yellow_1 !important;
+                    }
+                    @media screen and (max-width: 1300px){
+                        margin-left: 34px;
                     }
                 }
             }
@@ -71,5 +74,7 @@
                 }
             }
         }
+        
     }
+    
 }

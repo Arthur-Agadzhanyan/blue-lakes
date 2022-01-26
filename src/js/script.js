@@ -36,7 +36,7 @@ const restaurantAnim = ()=> timeline().fromTo(".restaurant", 1.5, {right: "-100v
 
 const avocationsAnim = ()=> timeline().fromTo(".avocations", 1.5, {right: "-100vw", left:'initial'}, {duration: 10, right:"0",display:'flex' }).play();
 
-const mapAnim = ()=> timeline().fromTo(".map", 1.5, {right: "-100vw", left:'initial'}, {duration: 10, right:"0",display:'block' }).play();
+const mapAnim = ()=> timeline().fromTo(".map", 1.5, {right: "-100vw", left:'initial'}, {duration: 10, right:"0",display:'flex' }).play();
 
 const restaurantContentAnim = ()=>timeline().fromTo("#restaurant_content", 1.7, {transform: "translate(45%,0%)"}, {duration: 10,transform: "translate(0%,0%)" }).play();
 
@@ -313,7 +313,7 @@ navItems[3].addEventListener('click',(e)=>{
 
       if(activeScreen == 5){
         closeMap()
-        reverceAvocations();
+        reverceAvocations('.avocations');
       }
       
       navigation.classList.remove('navigation-white')
