@@ -22,3 +22,128 @@
         border-color: $hov_border;
     }
 }
+
+@mixin modal(){
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1000000000000000001;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+
+    transition: all .2s linear;
+    opacity: 0;
+
+    .overlay{
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 200;
+        background: rgba(0,0,0,.4);
+    }
+    .content{
+        position: relative;
+        z-index: 300;
+
+        max-width: 1200px;
+        padding: 80px 15px;
+        width: 100%;
+        background: #fff;
+
+        text-align: center;
+
+        &__title{
+            font-weight: 300;
+            font-size: 48px;
+            line-height: 46px;
+            color: #2D2A26;
+            margin-bottom: 12px;
+            font-family: 'Bodoni',serif;
+        }
+
+        &__text{
+            font-weight: 300;
+            font-size: 18px;
+            line-height: 26px;
+
+            margin: 0 auto;
+            color: $grey;
+        }
+
+        &__form{
+            margin-top: 23px;
+            .form__input{
+                display: block;
+                max-width: 364px;
+                width: 100%;
+
+                font-weight: normal;
+                font-size: 16px;
+
+                padding: 13px 22px;
+                padding-bottom: 12px;
+                border: 0;
+                border: 1px solid $yellow_1;
+                outline: none;
+
+                margin: 0 auto;
+                margin-bottom: 24px;
+                font-weight: 300;
+            }
+            .form__btn{
+                @include button();
+                margin: 0 auto;
+                margin-top: 24px;
+            }
+        }
+
+        
+
+        &__phone{
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 31px;
+        }
+
+        @media screen and (max-width: 450px) {
+            &__title{
+                font-weight: 300;
+                font-size: 29px;
+                line-height: 28px;
+                margin-bottom: 12px;
+            }
+
+            &__text{
+                font-weight: 300;
+                font-size: 16px;
+                line-height: 18px;
+            }
+
+            &__form{
+                margin-top: 16px;
+
+                .form__btn{
+                    max-width: 364px;
+                    width: 100%;
+                    font-size: 18px;
+                    margin-top: 8px;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 450px) {
+        .overlay{
+            background: #fff;
+            user-select: none;
+        }
+    }
+}

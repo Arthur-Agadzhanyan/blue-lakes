@@ -506,3 +506,48 @@ navbarBtn.addEventListener('click', (e)=>{
       },500)
   } 
 })
+
+// modals
+
+const bellModal = document.querySelector(".modal_bell")
+const bellBtns = document.querySelectorAll(".bell_btn")
+
+const thanksBtn = document.getElementById("bell-form")
+const modalThanks = document.querySelector(".modal__thanks")
+
+const closeModals = document.querySelectorAll(".close_modal")
+
+bellBtns.forEach(el=>{
+  el.addEventListener("click",()=>{
+      bellModal.style.display = "flex"
+      document.body.style.overflowY = "hidden"
+      setTimeout(()=>bellModal.style.opacity = "1",100)
+      return
+  })
+})
+
+thanksBtn.onsubmit = (e)=>{
+  e.preventDefault()
+  bellModal.style.opacity = "0"
+  document.body.style.overflowY = "auto"
+  setTimeout(()=>bellModal.style.display = "none",300)
+
+  modalThanks.style.opacity = "1"
+  document.body.style.overflowY = "hidden"
+  setTimeout(()=>modalThanks.style.display = "flex",300)
+  return
+}
+
+closeModals.forEach(el=>{
+    el.addEventListener("click",()=>{
+        bellModal.style.opacity = "0"
+        document.body.style.overflowY = "auto"
+        setTimeout(()=>bellModal.style.display = "none",300)
+
+        modalThanks.style.opacity = "0"
+        document.body.style.overflowY = "auto"
+        setTimeout(()=>modalThanks.style.display = "none",300)
+
+        return
+    })
+})

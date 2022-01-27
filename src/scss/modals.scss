@@ -1,0 +1,44 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+.close{
+    position: absolute;
+    top: 32px;
+    right: 32px;
+
+    cursor: pointer;
+}
+
+.modal_bell{
+    
+    @include modal();
+    // opacity: 1;
+    // display: flex;
+}
+
+.mod_mb{
+    display: none;
+}
+
+.mod_ds{
+    display: block;
+}
+
+.modal__thanks{
+    @include modal();
+
+    .content{
+        padding: 220px 15px;
+    }
+
+    &__text{
+        margin-top: 24px;
+    }
+
+    .thanks__btn{
+        // @include button($blue,#fff,18px);
+        max-width: 300px;
+        width: 100%;
+        margin-top: 44px;
+    }
+}
