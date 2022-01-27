@@ -551,3 +551,17 @@ closeModals.forEach(el=>{
         return
     })
 })
+
+const mbNavItem = document.querySelectorAll('.mb_nav__item')
+
+mbNavItem.forEach((item)=>{
+  item.addEventListener('click',(e)=>{
+    navbarBtn.classList.remove('burger_active')
+    mobileBar.classList.add('mb_bar_closed')
+
+    if(mobileBar.classList.contains('bot_0')){
+        mobileBar.classList.remove("bot_0")
+    }
+
+  })
+})
