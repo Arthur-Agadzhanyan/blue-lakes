@@ -859,6 +859,10 @@ body {
   margin-left: -52px;
 }
 
+.sm {
+  display: none;
+}
+
 .intro {
   overflow: hidden;
 }
@@ -1780,6 +1784,10 @@ body {
   width: 100%;
 }
 
+.avocations .sm_avoc {
+  display: none !important;
+}
+
 .map {
   top: 0;
   background: #306261;
@@ -2073,6 +2081,15 @@ body {
     color: #272A2D;
   }
 
+  .about_complex .about_complex__content .content__info .info__constituents .constituent__list .list__item .item__title {
+    text-decoration: none;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 90%;
+    color: #272A2D;
+  }
+
   .rooms .rooms__block .rooms__container {
     -webkit-box-align: center;
         -ms-flex-align: center;
@@ -2226,12 +2243,32 @@ body {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 80%;
             flex: 0 1 80%;
+    margin-bottom: 25px;
   }
 
   .rooms .rooms__block .rooms__container .block__info {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 80%;
             flex: 0 1 80%;
+  }
+}
+
+@media screen and (max-width: 1300px) and (max-width: 650px) {
+  .rooms .rooms__block .rooms__container .block__slider {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+    margin-bottom: 15px;
+  }
+
+  .rooms .rooms__block .rooms__container .block__slider img {
+    width: 100%;
+  }
+
+  .rooms .rooms__block .rooms__container .block__info {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
   }
 }
 
@@ -2350,6 +2387,16 @@ body {
     margin-left: -42px;
   }
 
+  .md {
+    display: none !important;
+  }
+
+  .sm {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+  }
+
   .intro .intro__content .content__info .info__title {
     text-decoration: none;
     font-style: normal;
@@ -2404,6 +2451,15 @@ body {
   .intro {
     position: relative;
     overflow: auto;
+  }
+
+  .intro img {
+    max-height: 23vh;
+    margin-right: 12px;
+  }
+
+  .intro img:last-child {
+    margin-right: 0;
   }
 
   .about_complex .place_dots {
@@ -2482,6 +2538,31 @@ body {
             order: 3;
   }
 
+  .about_complex .bottom_images {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    position: relative;
+    overflow: auto;
+  }
+
+  .about_complex .bottom_images img {
+    max-height: 23vh;
+    margin-right: 12px;
+  }
+
+  .about_complex .bottom_images img:last-child {
+    margin-right: 0;
+  }
+
+  .rooms .rooms__block .rooms__container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
   .rooms .rooms__block .block__slider .room__check {
     display: none;
   }
@@ -2532,5 +2613,585 @@ body {
 
   .restaurant .bottom_images {
     display: none;
+  }
+
+  .restaurant .bottom_images {
+    position: relative;
+    overflow: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    overflow-x: hidden;
+  }
+
+  .restaurant .bottom_images img {
+    max-height: 24vh;
+    margin-right: 12px;
+  }
+
+  .restaurant .bottom_images img:last-child {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .content__wrapper-container {
+    padding-right: 25px;
+  }
+
+  .content__wrapper {
+    padding-left: 25px;
+  }
+
+  .intro .intro__content .content__info {
+    padding-right: 25px;
+  }
+
+  .rooms .rooms__block .rooms__container {
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 80px;
+  }
+
+  .avocations .avocations__content .avocations__list .list__item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 90%;
+            flex: 0 1 90%;
+    margin-top: 16px;
+  }
+
+  .avocations .avocations__content .avocations__list .list__item .item__name {
+    margin-bottom: 8px;
+  }
+
+  .avocations .avocations__content .avocations__list .list__item .item__image {
+    margin-left: -25px;
+  }
+
+  .avocations .avocations__content .avocations__list .list__item .bg {
+    width: 65vw;
+  }
+
+  .avocations .avocations__content .avocations__list .list__item .sr {
+    width: 55vw;
+  }
+
+  .avocations .avocations__content .avocations__list .list__item .ml {
+    width: 45vw;
+  }
+
+  .avocations .avocations__content .avocations__list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    padding-bottom: 42px;
+  }
+
+  .avocations .sm_avoc {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+  }
+
+  .avocations .md_avoc {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .intro .intro__content .content__info .info__title {
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 45px;
+    line-height: initial;
+    color: #272A2D;
+    margin: 22px 0px;
+  }
+
+  .intro .intro__content .content__info .info__subtitle {
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: auto;
+    color: #272A2D;
+  }
+
+  .intro .intro__content .content__info .info__btn {
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: auto;
+    color: #DFCC93;
+    padding: 15px 38px;
+    margin-top: 15px;
+  }
+
+  .intro .intro__content .content__image {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 50%;
+            flex: 0 1 50%;
+  }
+
+  .rooms .rooms__block .block__info .info__set .set__item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 49%;
+            flex: 0 1 49%;
+    margin-bottom: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .rooms .rooms__block .block__info .info__set .set__item .item__img {
+    margin-right: 8px;
+  }
+
+  .rooms .rooms__block .block__info .info__set {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .about_complex .places__content .content__slider {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+
+  .about_complex .places__content .content__info {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+  }
+
+  .about_complex .about_complex__content .content__info {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+  }
+
+  .about_complex .about_complex__content .content__slider {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+
+  .rooms .rooms__block .block__mb_price {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+  }
+
+  .restaurant .restaurant__content .content__slider {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+
+  .restaurant .restaurant__content .section__text {
+    max-width: 100%;
+  }
+
+  .restaurant .restaurant__content .content__info {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .avocations .avocations__content .avocations__list .list__item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 90%;
+            flex: 0 1 90%;
+    margin-top: 16px;
+  }
+
+  .avocations .avocations__content .avocations__list .list__item .item__name {
+    margin-bottom: 8px;
+  }
+
+  .avocations .avocations__content .avocations__list .list__item .item__image {
+    margin-left: -25px;
+  }
+
+  .avocations .avocations__content .avocations__list .list__item .bg {
+    width: 75vw;
+  }
+
+  .avocations .avocations__content .avocations__list .list__item .sr {
+    width: 65vw;
+  }
+
+  .avocations .avocations__content .avocations__list .list__item .ml {
+    width: 55vw;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .intro .intro__content .content__info .info__suptitle {
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: auto;
+    color: #272A2D;
+  }
+
+  .intro .intro__content .content__info .info__title {
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: initial;
+    color: #272A2D;
+    margin: 22px 0px;
+  }
+
+  .intro .intro__content .content__info .info__subtitle {
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: auto;
+    color: #272A2D;
+  }
+
+  .intro .intro__content .content__image {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 60%;
+            flex: 0 1 60%;
+    padding-right: 25px;
+    margin-top: 28px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .restaurant .restaurant__content .content__info .restaurant__buttons {
+    margin-top: 24px;
+    margin-bottom: 32px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+
+  .restaurant .restaurant__content .content__info .restaurant__buttons .buttons__bar {
+    margin: 0;
+  }
+
+  .restaurant .restaurant__content .content__info .restaurant__buttons button {
+    font-size: 16px !important;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .section__title {
+    font-size: 25px;
+  }
+
+  .section__text {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .content__wrapper-container {
+    padding-right: 18px;
+  }
+
+  .content__wrapper {
+    padding-left: 18px;
+  }
+
+  .slider-arrow::after {
+    font-size: 10px;
+    padding: 10px 13px;
+  }
+
+  .intro .intro__content .content__image {
+    padding-right: 16px;
+  }
+
+  .about_complex .places__content .content__info .info__avocations .avocations__title {
+    font-size: 20px;
+  }
+
+  .about_complex .places__content .content__info .info__avocations .avocations__list .list__item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+  }
+
+  .about_complex .places__content .content__info .info__avocations .avocations__list .list__item:last-child {
+    margin-top: 5px;
+  }
+
+  .about_complex .places__content .content__info .info__avocations .avocations__list {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+
+  .about_complex .about_complex__content .content__info .info__constituents .constituents__title {
+    font-size: 20px;
+  }
+
+  .about_complex .about_complex__content .content__info .info__constituents .constituent__list .list__item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+  }
+
+  .about_complex .about_complex__content .content__info .info__constituents .constituent__list {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+
+  .about_complex {
+    padding-bottom: 35px;
+  }
+
+  .rooms .rooms__block .rooms__container {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .avocations .avocations__content .avocations__list .list__item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 90%;
+            flex: 0 1 90%;
+    margin-top: 16px;
+  }
+
+  .avocations .avocations__content .avocations__list .list__item .item__name {
+    margin-bottom: 8px;
+  }
+
+  .avocations .avocations__content .avocations__list .list__item .item__image {
+    margin-left: -18px;
+  }
+
+  .avocations .avocations__content .avocations__list .list__item .bg {
+    width: 85vw;
+  }
+
+  .avocations .avocations__content .avocations__list .list__item .sr {
+    width: 75vw;
+  }
+
+  .avocations .avocations__content .avocations__list .list__item .ml {
+    width: 65vw;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .intro .intro__content .content__info .info__title {
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: initial;
+    color: #272A2D;
+    margin: 15px 0px;
+  }
+
+  .intro .intro__content .content__info .info__subtitle {
+    margin-bottom: 24px;
+  }
+
+  .intro .intro__content .content__info .info__btn {
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: auto;
+    color: #DFCC93;
+    padding: 13px 37px;
+    margin-top: 0px;
+  }
+
+  .intro .intro__content .content__info {
+    padding-right: 16px;
+  }
+
+  .rooms .rooms__block .block__info .info__header .header__suptitle {
+    text-decoration: none;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: auto;
+    color: #fff;
+  }
+
+  .rooms .rooms__block .block__info .info__header .header__subtitle {
+    text-decoration: none;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: auto;
+    color: #DFCC93;
+  }
+
+  .rooms .rooms__block .block__info .section__text {
+    margin-top: 16px;
+  }
+
+  .rooms .rooms__block .block__info .bathroom .bathroom__title {
+    margin-top: 16px;
+  }
+
+  .rooms .rooms__block .block__info .bathroom .bathroom__title p {
+    font-size: 16px;
+  }
+
+  .rooms .rooms__block .block__info .bathroom .bathroom__title img {
+    width: 32px;
+  }
+
+  .rooms .rooms__block .block__mb_price .price__info .info__text {
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: auto;
+    color: #fff;
+  }
+
+  .rooms .rooms__block .block__mb_price .price__info .info__price {
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 22px;
+    line-height: auto;
+    color: #fff;
+  }
+
+  .rooms .rooms__block .block__mb_price .price__btn {
+    left: 16px;
+    bottom: -10px;
+    padding: 12px 35px;
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: auto;
+    color: #030304;
+  }
+
+  .rooms .rooms__block .block__mb_price {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+    padding: 16px;
+    padding-bottom: 21px;
+  }
+
+  .avocations .avocations__content .avocations__list .list__item .item__name {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .restaurant .restaurant__content .content__info .restaurant__buttons button {
+    font-size: 14px !important;
+    width: 48%;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .section__title {
+    font-size: 20px;
+    line-height: 18px;
+  }
+
+  .section__text {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .intro .intro__content .content__info .info__subtitle {
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: auto;
+    color: #272A2D;
+  }
+
+  .about_complex .places__content .content__info .section__text {
+    margin-top: 12px;
+  }
+
+  .about_complex .places__content .content__info .info__avocations .avocations__title {
+    font-size: 18px;
+  }
+
+  .about_complex .places__content .content__info .info__avocations .avocations__list .list__item .item__img img {
+    width: 28px;
+  }
+
+  .about_complex .places__content .content__info .info__avocations .avocations__list .list__item .item__title {
+    font-size: 14px;
+  }
+
+  .about_complex .places__content .content__info .info__avocations .avocations__list .list__item .item__info .item__gorge .gorge__item {
+    font-size: 14px;
+  }
+
+  .about_complex .about_complex__content .content__info .section__text {
+    margin-top: 12px;
+  }
+
+  .about_complex .about_complex__content .content__info .info__constituents .constituents__title {
+    font-size: 18px;
+  }
+
+  .about_complex .about_complex__content .content__info .info__constituents .constituent__list .list__item .item__title {
+    font-size: 14px;
+  }
+
+  .about_complex .about_complex__content .content__info .info__constituents .constituent__list .list__item .item__img img {
+    width: 28px;
+  }
+
+  .about_complex .about_complex__content .content__info .info__constituents {
+    margin-top: 24px;
+  }
+
+  .rooms .rooms__block .block__info .section__text {
+    margin-top: 12px;
+  }
+}
+
+@media screen and (max-width: 345px) {
+  .rooms .rooms__block .block__info .info__set .set__item .item__text {
+    font-size: 14px;
+  }
+
+  .rooms .rooms__block .block__info .bathroom .bathroom__list .list__item .item__text {
+    font-size: 14px;
   }
 }

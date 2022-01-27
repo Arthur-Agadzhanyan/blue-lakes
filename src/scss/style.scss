@@ -67,6 +67,13 @@ body{
   @media screen and (max-width: 1300px){
     font-size: 38px;
   }
+  @media screen and (max-width: 450px){
+    font-size: 25px;
+  }
+  @media screen and (max-width: 350px){
+    font-size: 20px;
+    line-height: 18px;
+  }
 }
 
 .section__text{
@@ -78,6 +85,14 @@ body{
   @media screen and (max-width: 1300px){
     font-size: 18px;
     line-height: auto;
+  }
+  @media screen and (max-width: 450px){
+    font-size: 16px;
+    line-height: 20px;
+  }
+  @media screen and (max-width: 350px){
+    font-size: 14px;
+    line-height: 20px;
   }
 }
 
@@ -98,23 +113,42 @@ body{
     @media screen and (max-width: 1650px) {
       padding-right: 90px;
     }
+
     @media screen and (max-width: 1350px) {
       padding-right: 60px;
     }
+
     @media screen and (max-width: 1100px){
       padding-right: 40px;
+    }
+
+    @media screen and (max-width: 800px){
+      padding-right: 25px;
+    }
+
+    @media screen and (max-width: 450px) {
+      padding-right: 18px;
     }
   }
 
     @media screen and (max-width: 1650px) {
       padding-left: 90px;
     }
+    
     @media screen and (max-width: 1350px) {
       padding-left: 60px;
     }
 
     @media screen and (max-width: 1100px){
       padding-left: 40px;
+    }
+
+    @media screen and (max-width: 800px){
+      padding-left: 25px;
+    }
+
+    @media screen and (max-width: 450px) {
+      padding-left: 18px;
     }
 }
 
@@ -130,6 +164,7 @@ body{
 
     transition: all .2s linear;
   }
+
   &:hover{
     &::after{
       background: #fff;
@@ -141,6 +176,12 @@ body{
   @media screen and (max-width: 1100px) {
     &::after{
       padding: 15px 18px;
+    }
+  }
+  @media screen and (max-width: 450px) {
+    &::after{
+      font-size: 10px;
+      padding: 10px 13px;
     }
   }
 }
@@ -160,6 +201,19 @@ body{
     @media screen and (max-width: 1100px) {
       margin-left: -42px;
     }
+  }
+}
+
+.md{
+  @media screen and (max-width: 1100px) {
+    display: none !important;
+  }
+}
+
+.sm{
+  display: none;
+  @media screen and (max-width: 1100px) {
+    display: flex !important;
   }
 }
 
@@ -183,7 +237,11 @@ body{
     .content__info {
       flex: 0 1 60%;
       .info__suptitle{
-        @include text($grey,24px,300)
+        @include text($grey,24px,300);
+
+        @media screen and (max-width:550px){
+          @include text($grey,20px,300);
+        }
       }
 
       .info__title{
@@ -208,12 +266,40 @@ body{
         @media screen and (max-width:1100px){
           @include text($grey,60px,400,auto);
         }
+        @media screen and (max-width:700px){
+          @include text($grey,45px,400,initial);
+          margin: 22px 0px;
+        }
+        @media screen and (max-width:550px){
+          @include text($grey,40px,400,initial);
+          margin: 22px 0px;
+        }
+        @media screen and (max-width: 400px){
+          @include text($grey,36px,400,initial);
+          margin: 15px 0px;
+        }
       }
 
       .info__subtitle{
         @include text($grey,24px);
         max-width: 386px;
         margin-bottom: 56px;
+
+        @media screen and (max-width:700px){
+          @include text($grey,21px);
+        }
+
+        @media screen and (max-width:550px){
+          @include text($grey,19px);
+        }
+
+        @media screen and (max-width:400px){
+          margin-bottom: 24px;
+        }
+
+        @media screen and (max-width:350px){
+          @include text($grey,17px);
+        }
       }
 
       .info__btn{
@@ -232,6 +318,16 @@ body{
 
         @media screen and (max-width:1500px){
           margin-top: 15px;
+        }
+        @media screen and (max-width:700px){
+          @include text($yellow_1,20px,600);
+          padding: 15px 38px;
+          margin-top: 15px;
+        }
+        @media screen and (max-width: 400px){
+          @include text($yellow_1,16px,600);
+          padding: 13px 37px;
+          margin-top: 0px;
         }
       }
 
@@ -252,6 +348,14 @@ body{
           max-width: initial;
           margin-bottom: 24px;
         }
+      }
+
+      @media screen and (max-width: 800px) {
+        padding-right: 25px;
+      }
+
+      @media screen and (max-width: 400px) {
+        padding-right: 16px;
       }
     }
 
@@ -304,6 +408,18 @@ body{
         margin-top: 55px;
         margin-bottom: 36px;
       }
+      @media screen and (max-width:700px){
+        flex: 0 1 50%;
+      }
+
+      @media screen and (max-width:550px){
+        flex: 0 1 60%;
+        padding-right: 25px;
+        margin-top: 28px;
+      }
+      @media screen and (max-width: 450px) {
+        padding-right: 16px;
+      }
     }
 
     @media screen and (max-width:1300px){
@@ -348,8 +464,18 @@ body{
 
   @media screen and (max-width: 1100px){
     position: relative;
-    overflow: auto
+    overflow: auto;
+    img{
+      max-height: 23vh;
+      margin-right: 12px;
+
+      &:last-child{
+        margin-right: 0;
+      }
+    }
   }
+
+  
 }
 
 // О комплексе =========================
@@ -410,6 +536,11 @@ body{
         margin-top: 35px;
         margin-bottom: 35px;
       }
+      @media screen and (max-width: 650px) {
+        flex: 0 1 100%;
+        margin-top: 24px;
+        margin-bottom: 24px;
+      }
     }
     
     .content__info {
@@ -417,6 +548,9 @@ body{
       // transition: all 1s linear;
       .section__text{
         margin-top: 20px;
+        @media screen and (max-width: 350px){
+          margin-top: 12px;
+        }
       }
       
 
@@ -426,6 +560,12 @@ body{
           @include text($black,24px,400);
           font-family: 'Bodoni', serif;
           font-style: italic;
+          @media screen and (max-width: 450px){
+            font-size: 20px;
+          }
+          @media screen and (max-width: 350px){
+            font-size: 18px;
+          }
         }
 
         .avocations__list {
@@ -454,12 +594,20 @@ body{
 
             .item__img {
               margin-right: 13px;
+              @media screen and (max-width: 350px){
+                img{
+                  width: 28px;
+                }
+              }
             }
             .item__title {
               @include text($grey,18px,normal,90%);
 
               @media screen and (max-width: 1350px) {
                 @include text($grey,16px,normal,90%);
+              }
+              @media screen and (max-width: 350px){
+                font-size: 14px;
               }
             }
             .item__info {
@@ -468,15 +616,28 @@ body{
                 .gorge__item {
                   margin-bottom: 14px;
                   @include text($grey,16px,300,90%);
+                  @media screen and (max-width: 350px){
+                    font-size: 14px;
+                  }
                 }
               }
               
             }
-            
+            @media screen and (max-width: 450px){
+              flex: 0 1 100%;
+
+              &:last-child{
+                margin-top: 5px;
+              }
+            }
           }
           @media screen and (max-width: 1250px){
             max-width: 100%;
             margin-top: 20px
+          }
+
+          @media screen and (max-width: 450px){
+            flex-wrap: wrap;
           }
         }
         @media screen and (max-width: 1100px) {
@@ -486,6 +647,9 @@ body{
       @media screen and (max-width: 1100px) {
         flex: 0 1 80%;
         padding-bottom: 32px;
+      }
+      @media screen and (max-width: 650px) {
+        flex: 0 1 100%;
       }
     }
 
@@ -515,6 +679,9 @@ body{
 
       .section__text{
         margin-top: 20px;
+        @media screen and (max-width: 350px){
+          margin-top: 12px;
+        }
       }
       // для анимации----------------------------
       .text_bot{
@@ -532,6 +699,12 @@ body{
           @include text($black,24px,400);
           font-family: 'Bodoni', serif;
           font-style: italic;
+          @media screen and (max-width: 450px){
+            font-size: 20px;
+          }
+          @media screen and (max-width: 350px){
+            font-size: 18px;
+          }
         }
 
         .constituent__list{
@@ -548,16 +721,42 @@ body{
             align-items: center;
             margin-bottom: 12px;
 
+            .item__title{
+              @media screen and (max-width: 1350px) {
+                @include text($grey,16px,normal,90%);
+              }
+              @media screen and (max-width: 350px){
+                font-size: 14px;
+              }
+            }
+
             .item__img{
               margin-right: 14px;
+              @media screen and (max-width: 350px){
+                img{
+                  width: 28px;
+                }
+              }
+            }
+            @media screen and (max-width: 450px){
+              flex: 0 1 100%;
             }
           }
+
+          @media screen and (max-width: 450px){
+            flex-wrap: wrap;
+          }
+        }
+        @media screen and (max-width: 350px){
+          margin-top: 24px;
         }
       } 
       @media screen and (max-width: 1100px) {
         flex: 0 1 80%;
         order: 2;
-        
+      }
+      @media screen and (max-width: 650px) {
+        flex: 0 1 100%;
       }
     }
     #aboutComplexSlider{
@@ -586,6 +785,11 @@ body{
         order: 1;
         margin-top: 35px;
         margin-bottom: 35px;
+      }
+      @media screen and (max-width: 650px) {
+        flex: 0 1 100%;
+        margin-top: 24px;
+        margin-bottom: 24px;
       }
     }
 
@@ -622,17 +826,26 @@ body{
       position: relative;
       order: 3;
     }
-    
+
+    @media screen and (max-width: 1100px){
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      overflow: auto;
+      img{
+        max-height: 23vh;
+        margin-right: 12px;
+  
+        &:last-child{
+          margin-right: 0;
+        }
+      }
+    }
   }
 
-  // @media screen and (max-width: 1100px){
-  //   position: relative;
-  //   width: 100vw;
-  //   height: auto;
-  //   min-height: 100vh;
-  //   overflow: auto;
-  //   right:0;
-  // }
+  @media screen and (max-width: 450px){
+    padding-bottom: 35px;
+  }
 }
 
 // Номера ===========================
@@ -717,6 +930,14 @@ body{
           margin-bottom: 50px;
           @media screen and (max-width: 1100px) {
             flex: 0 1 80%;
+            margin-bottom: 25px;
+          }
+          @media screen and (max-width: 650px) {
+            flex: 0 1 100%;
+            margin-bottom: 15px;
+            img{
+              width: 100%;
+            }
           }
         }
         .block__info{
@@ -726,7 +947,27 @@ body{
           @media screen and (max-width: 1100px) {
             flex: 0 1 80%;
           }
+          @media screen and (max-width: 650px) {
+            flex: 0 1 100%;
+
+          }
         }
+      }
+
+      @media screen and (max-width: 1100px){
+        padding-left: 40px;
+        padding-right: 40px;
+      }
+  
+      @media screen and (max-width: 800px){
+        padding-left: 25px;
+        padding-right: 25px;
+        padding-top: 80px;
+      }
+  
+      @media screen and (max-width: 450px) {
+        padding-left: 18px;
+        padding-right: 18px;
       }
     }
 
@@ -736,15 +977,29 @@ body{
         .header__suptitle {
           @include text(#fff,24px,normal);
           margin-bottom: 7px;
+          @media screen and (max-width: 400px) {
+            @include text(#fff,16px,normal);
+          }
         }
         .header__subtitle {
           margin-top: 7px;
           @include text($yellow_1,16px,normal);
+
+          @media screen and (max-width: 400px) {
+            @include text($yellow_1,14px,normal);
+          }
         }
       }
 
       .section__text {
         margin-top: 22px;
+        @media screen and (max-width: 400px) {
+          margin-top: 16px;
+          
+        }
+        @media screen and (max-width: 350px) {
+          margin-top: 12px;
+        }
       }
       
       .info__set {
@@ -758,8 +1013,26 @@ body{
             margin-bottom: 3px;
           }
           .item__text {
-            @include text($yellow_1,16px,400,110%)
+            @include text($yellow_1,16px,400,110%);
+
+            @media screen and (max-width: 345px){
+              font-size: 14px;
+            }
           }
+
+          @media screen and (max-width: 700px) {
+            flex: 0 1 49%;
+            margin-bottom: 10px;
+
+            display: flex;
+            align-items: center;
+            .item__img {
+              margin-right: 8px;
+            }
+          }
+        }
+        @media screen and (max-width: 700px) {
+          flex-wrap: wrap;
         }
       }
       
@@ -776,7 +1049,19 @@ body{
           p{
             @include text($yellow_1,20px,400,140%)
           }
+
+          @media screen and (max-width: 400px){
+            margin-top: 16px;
+
+            p{
+              font-size: 16px;
+            }
+            img{
+              width: 32px;
+            }
+          }
         }
+
         .bathroom__list {
           display: flex;
           align-items: center;
@@ -793,8 +1078,13 @@ body{
             .item__img {
               margin-right: 10px;
             }
+
             .item__text {
-              @include text($yellow_1,16px,400,90%)
+              @include text($yellow_1,16px,400,90%);
+
+              @media screen and (max-width: 345px){
+                font-size: 14px;
+              }
             }
           }
           
@@ -937,7 +1227,10 @@ body{
       .price__info {
         .info__text {
           @include text(#fff,20px,300);
-          
+
+          @media screen and (max-width: 400px) {
+            @include text(#fff,14px,300);
+          }
         }
         .info__price {
           @include text(#fff,36px,300);
@@ -945,6 +1238,9 @@ body{
           margin-top: 8px;
           .price__rub {
             color: $yellow_1;
+          }
+          @media screen and (max-width: 400px) {
+            @include text(#fff,22px,300);
           }
         }
       }
@@ -969,6 +1265,21 @@ body{
           background: $black;
           color: white;
         }
+
+        @media screen and (max-width: 400px) {
+          left: 16px;
+          bottom: -10px;
+          padding: 12px 35px;
+          @include text($black,14px,400);
+        }
+      }
+      @media screen and (max-width: 650px) {
+        flex: 0 1 100%;
+      }
+      @media screen and (max-width: 400px) {
+        flex: 0 1 100%;
+        padding: 16px;
+        padding-bottom: 21px;
       }
     }
 
@@ -1027,11 +1338,20 @@ body{
         margin-top: 35px;
         margin-bottom: 25px;
       }
+      @media screen and (max-width: 650px) {
+        flex: 0 1 100%;
+        margin-top: 24px;
+        margin-bottom: 24px;
+      }
     }
 
     .section__text{
       margin-top: 16px;
       max-width: 525px;
+
+      @media screen and (max-width: 650px) {
+        max-width: 100%;
+      }
     }
 
     .content__info{
@@ -1061,9 +1381,36 @@ body{
           margin-top: 24px;
           margin-bottom: 100px;
         }
+
+        @media screen and (max-width: 500px) {
+          margin-top: 24px;
+          margin-bottom: 32px;
+          display: flex;
+          justify-content: space-between;
+
+          .buttons__bar{
+            margin: 0;
+          }
+
+          button{
+            font-size: 16px !important;
+          }
+        }
+
+        @media screen and (max-width: 375px) {
+          button{
+            font-size: 14px !important;
+            width: 48%;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+          }
+        }
       }
       @media screen and (max-width: 1100px) {
         flex: 0 1 80%;
+      }
+      @media screen and (max-width: 650px) {
+        flex: 0 1 100%;
       }
     }
     @media screen and (max-width: 1100px) {
@@ -1095,6 +1442,21 @@ body{
       }
       @media screen and (max-width: 1100px) {
         display: none;
+      }
+      @media screen and (max-width: 1100px){
+        position: relative;
+        overflow: auto;
+        display: flex;
+        justify-content: space-between;
+        overflow-x: hidden;
+        img{
+          max-height: 24vh;
+          margin-right: 12px;
+    
+          &:last-child{
+            margin-right: 0;
+          }
+        }
       }
   }
 }
@@ -1148,7 +1510,104 @@ body{
           display: block;
           width: 100%;
         }
+        @media screen and (max-width: 800px) {
+          flex: 0 1 90%;
+          margin-top: 16px;
+
+          .item__name{
+            margin-bottom: 8px;
+          }
+
+          .item__image{
+            margin-left: -25px;
+          }
+
+          .bg{
+            width: 65vw;
+          }
+
+          .sr{
+            width: 55vw;
+          }
+
+          .ml{
+            width: 45vw;
+          }
+        }
+
+        @media screen and (max-width: 600px) {
+          flex: 0 1 90%;
+          margin-top: 16px;
+
+          .item__name{
+            margin-bottom: 8px;
+          }
+
+          .item__image{
+            margin-left: -25px;
+          }
+
+          .bg{
+            width: 75vw;
+          }
+
+          .sr{
+            width: 65vw;
+          }
+
+          .ml{
+            width: 55vw;
+          }
+        }
+        @media screen and (max-width: 450px) {
+          flex: 0 1 90%;
+          margin-top: 16px;
+
+          .item__name{
+            margin-bottom: 8px;
+          }
+
+          .item__image{
+            margin-left: -18px;
+          }
+
+          .bg{
+            width: 85vw;
+          }
+
+          .sr{
+            width: 75vw;
+          }
+
+          .ml{
+            width: 65vw;
+          }
+        }
+
+        @media screen and (max-width: 400px) {
+          .item__name{
+            font-size: 14px;
+          }
+        }
       }
+      @media screen and (max-width: 800px) {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-bottom: 42px;
+      }
+    }
+  }
+
+  .sm_avoc{
+    display: none !important;
+    @media screen and (max-width: 800px) {
+      display: flex !important;
+    }
+  }
+
+  .md_avoc{
+    @media screen and (max-width: 800px) {
+      display: none !important;
     }
   }
   
