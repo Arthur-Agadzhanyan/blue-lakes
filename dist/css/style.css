@@ -2638,6 +2638,14 @@ body {
 }
 
 @media screen and (max-width: 800px) {
+  .mobile_bar .navbar__list .list__btn {
+    margin-bottom: 40px;
+  }
+
+  .mobile_bar .navbar__list {
+    padding-top: 50px;
+  }
+
   .content__wrapper-container {
     padding-right: 25px;
   }
@@ -2702,6 +2710,69 @@ body {
 
   .avocations .md_avoc {
     display: none !important;
+  }
+
+  .map .map__content .content__info {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+    margin-bottom: 42px;
+  }
+
+  .map .map__content .content__info .info__list {
+    margin-top: 30px;
+  }
+
+  .map .map__content .content__map {
+    width: 100vw;
+    max-height: 60vh;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 auto;
+            flex: 0 1 auto;
+    margin-left: -25px;
+  }
+
+  .map .map__content {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+
+  .map .footer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .map .footer .logo {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    margin-bottom: 24px;
+  }
+
+  .map .footer .footer__text {
+    text-align: center;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    margin-bottom: 24px;
+  }
+
+  .map .footer .footer__text span,
+  .map .footer .footer__text a {
+    display: block;
+    margin-right: 0;
+  }
+
+  .map .footer .footer__text span {
+    margin-bottom: 12px;
+  }
+
+  .map .footer .digital {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
   }
 }
 
@@ -2887,6 +2958,41 @@ body {
 }
 
 @media screen and (max-width: 500px) {
+  .mobile_bar .navbar__list .list__item {
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: auto;
+    color: #fff;
+  }
+
+  .mobile_bar .navbar__list {
+    padding-top: 150px;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+  }
+
+  .mobile_bar .navbar__phone {
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: auto;
+    color: #fff;
+    margin-top: auto;
+    margin-bottom: 40px;
+  }
+
+  .mobile_bar .list__inst img {
+    width: 30px;
+  }
+
+  .mobile_bar .list__inst {
+    margin-bottom: 94px;
+  }
+
   .restaurant .restaurant__content .content__info .restaurant__buttons {
     margin-top: 24px;
     margin-bottom: 32px;
@@ -3003,9 +3109,20 @@ body {
   .avocations .avocations__content .avocations__list .list__item .ml {
     width: 65vw;
   }
+
+  .map .map__content .content__map {
+    margin-left: -16px;
+  }
 }
 
 @media screen and (max-width: 400px) {
+  .mobile_bar .navbar__list {
+    padding-top: 110px;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+  }
+
   .intro .intro__content .content__info .info__title {
     text-decoration: none;
     font-style: normal;
@@ -3118,6 +3235,41 @@ body {
     width: 48%;
     padding-left: 0 !important;
     padding-right: 0 !important;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .map .map__content .content__info .info__list .list__item {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-bottom: 18px;
+    padding-right: 16px;
+  }
+
+  .map .map__content .content__info .info__list .list__item:first-child {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    margin-bottom: 18px;
+  }
+
+  .map .map__content .content__info .info__list .list__item .item__img {
+    width: 24px;
+    margin-right: 8px;
+  }
+
+  .map .map__content .content__info .info__list .list__item .item__img img {
+    width: 24px;
+    margin-right: 8px;
+  }
+
+  .map .map__content .content__info .info__list .list__item .item__text {
+    font-size: 16px;
+  }
+
+  .map .map__content .content__info .info__list .list__item .item__phone {
+    font-size: 22px;
   }
 }
 

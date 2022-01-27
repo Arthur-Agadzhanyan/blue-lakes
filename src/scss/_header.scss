@@ -206,6 +206,10 @@
             border: none;
             @include text($grey,18px,600);
             margin-bottom: 80px;
+
+            @media screen and (max-width: 800px){
+                margin-bottom: 40px;
+            }
         }
 
         .list__item {
@@ -213,6 +217,10 @@
             position: relative;
             transition: all .2s linear;
             list-style: none;
+
+            @media screen and (max-width: 500px){
+                @include text(#fff,18px,300);
+            }
         }
 
         .list__link{
@@ -232,7 +240,18 @@
                 color: $grey;
             }
         }
+        @media screen and (max-width: 800px){
+            padding-top: 50px;
+        }
+        @media screen and (max-width: 500px){
+            padding-top: 150px;
+            justify-content: start;
+        }
 
+        @media screen and (max-width: 400px){
+            padding-top: 110px;
+            justify-content: start;
+        }
     }
 
     .navbar__phone{
@@ -240,12 +259,26 @@
         @include text(#fff,26px,300);
         text-align: center;
         margin-bottom: 60px;
+
+        @media screen and (max-width: 500px){
+            @include text(#fff,18px,300);
+            margin-top: auto;
+            margin-bottom: 40px;
+        }
     }
 
     .list__inst{
         img{
             width: 40px;
+
+            @media screen and (max-width: 500px) {
+                width: 30px;
+            }
         }
+        @media screen and (max-width: 500px){
+            margin-bottom: 94px;
+        }
+        
     }
     
 }

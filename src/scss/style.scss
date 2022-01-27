@@ -1638,10 +1638,12 @@ body{
     .content__info{
       flex: 0 1 23%;
       padding-top: 42px;
+
       .info__list {
         display: flex;
         flex-direction: column;
         margin-top: 100px;
+
         .list__item {
           display: flex;
           margin-bottom: 48px;
@@ -1674,7 +1676,33 @@ body{
               @include text(#fff,24px,400);
             }
           }
+          @media screen and (max-width: 370px) {
+            align-items: center;
+            margin-bottom: 18px;
+            padding-right: 16px;
 
+            &:first-child{
+              align-items: flex-start;
+              margin-bottom: 18px;
+            }
+
+            .item__img{
+              width: 24px;
+              margin-right: 8px;
+              img{
+                width: 24px;
+                margin-right: 8px;
+              }
+            }
+
+            .item__text{
+              font-size: 16px;
+            }
+
+            .item__phone{
+              font-size: 22px;
+            }
+          }
         }
       }
       @media screen and (max-width: 1550px){
@@ -1682,6 +1710,13 @@ body{
       }
       @media screen and (max-width: 1250px){
         flex: 0 1 40%;
+      }
+      @media screen and (max-width: 800px) {
+        flex: 0 1 100%;
+        margin-bottom: 42px;
+        .info__list{
+          margin-top: 30px;
+        }
       }
     }
 
@@ -1696,6 +1731,19 @@ body{
       @media screen and (max-width: 1250px){
         flex: 0 1 55%;
       }
+      @media screen and (max-width: 800px) {
+        width: 100vw;
+        max-height: 60vh;
+        flex: 0 1 auto;
+        margin-left: -25px;
+      }
+      @media screen and (max-width: 450px) {
+        margin-left: -16px;
+      }
+    }
+
+    @media screen and (max-width: 800px) {
+      flex-wrap: wrap;
     }
   }
 
@@ -1721,6 +1769,32 @@ body{
       span, a{
         @include text(rgba(255,255,255,.7),14px,300);
         text-decoration: none;
+      }
+    }
+
+    @media screen and (max-width: 800px) {
+      flex-direction: column;
+
+      .logo{
+        order: 1;
+        margin-bottom: 24px;
+      }
+      .footer__text{
+        text-align: center;
+        span,a{
+          display: block;
+          margin-right: 0;
+        }
+        order: 2;
+
+        span{
+          margin-bottom: 12px;
+        }
+
+        margin-bottom: 24px;
+      }
+      .digital{
+        order: 3
       }
     }
   }
