@@ -546,7 +546,7 @@ body{
     padding-bottom: 5vh;
     
 
-    @media screen and (min-width: 1750px) and (max-height:800px){
+    @media screen and (min-width: 1750px) and (max-height:900px){
       margin-bottom: 50px
     }
     @media screen and (max-width: 1100px) {
@@ -1681,6 +1681,8 @@ body{
     
   }
 
+  
+
   .avocations__content{
     flex-grow: 1;
 
@@ -1699,7 +1701,9 @@ body{
   
       .list__item {
         flex: 0 1 16%;
-  
+        transform: translateY(100%);
+        transition: all .8s linear;
+
         .item__name {
           @include text($grey,20px,400);
           margin-bottom: 15px;
@@ -1708,6 +1712,11 @@ body{
           display: block;
           width: 100%;
         }
+        
+        @media screen and (max-width: 1100px) {
+          transform: translateY(0%);
+        }
+
         @media screen and (max-width: 800px) {
           flex: 0 1 90%;
           margin-top: 16px;
@@ -1806,6 +1815,18 @@ body{
   .md_avoc{
     @media screen and (max-width: 800px) {
       display: none !important;
+    }
+  }
+  
+}
+
+.active{
+  .avocations__content{
+    .avocations__list{
+      .list__item{
+          transition: all .8s linear;
+          transform: translateY(0%);
+      }
     }
   }
   

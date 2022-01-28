@@ -2009,6 +2009,12 @@ body {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 16%;
           flex: 0 1 16%;
+  -webkit-transform: translateY(100%);
+      -ms-transform: translateY(100%);
+          transform: translateY(100%);
+  -webkit-transition: all .8s linear;
+  -o-transition: all .8s linear;
+  transition: all .8s linear;
 }
 
 .avocations .avocations__content .avocations__list .list__item .item__name {
@@ -2028,6 +2034,15 @@ body {
 
 .avocations .sm_avoc {
   display: none !important;
+}
+
+.active .avocations__content .avocations__list .list__item {
+  -webkit-transition: all .8s linear;
+  -o-transition: all .8s linear;
+  transition: all .8s linear;
+  -webkit-transform: translateY(0%);
+      -ms-transform: translateY(0%);
+          transform: translateY(0%);
 }
 
 .map {
@@ -2210,7 +2225,7 @@ body {
   }
 }
 
-@media screen and (min-width: 1750px) and (max-height: 800px) {
+@media screen and (min-width: 1750px) and (max-height: 900px) {
   .about_complex .places {
     margin-bottom: 50px;
   }
@@ -2922,6 +2937,12 @@ body {
 
   .restaurant .bottom_images .md {
     display: none;
+  }
+
+  .avocations .avocations__content .avocations__list .list__item {
+    -webkit-transform: translateY(0%);
+        -ms-transform: translateY(0%);
+            transform: translateY(0%);
   }
 }
 

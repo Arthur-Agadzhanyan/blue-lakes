@@ -12,12 +12,12 @@
             color: white !important;
         }
     }
-
+    
     .navigation__content {
         max-width: 1640px;
         margin: 0 auto;
         padding: 20px 0px;
-
+        // mix-blend-mode: difference;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -34,7 +34,7 @@
                     margin-left: 64px;
                     @include text($grey,16px,300);
                     transition: color .7s linear;
-
+                   
                     &-active{
                         color: $yellow_1 !important;
                     }
