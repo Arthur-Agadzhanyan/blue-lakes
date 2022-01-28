@@ -27,7 +27,7 @@ body{
   margin: 0;
   height: 100vh;
   width: 100vw;
-  overflow: hidden;
+  overflow-x: hidden;
 
   font-family: "Bahnschrift",sans-serif;
 
@@ -944,12 +944,12 @@ body{
 
 // Номера ===========================
 .rooms {
-  right: -100vw;
+  right: -200vw;
   overflow-y: auto;
   // z-index: 3;
   background: $green_1;
 
-  display: none;
+  // display: none;
 
   .slider-arrow{
     &::after{
@@ -1453,13 +1453,13 @@ body{
 
 // Ресторан =========================
 .restaurant {
-  right: -100vw;
+  right: -300vw;
   position: relative;
   background: #fff;
   // z-index: 4;
   overflow: hidden;
 
-  display: none;
+  // display: none;
 
   .restaurant__content{
     display: flex;
@@ -1658,7 +1658,7 @@ body{
 
 // Развлечения ==========================
 .avocations{
-  right: -100vw;
+  right: -400vw;
   top: 0;
   background: white;
   // z-index: 5;
@@ -1668,7 +1668,7 @@ body{
   display: flex;
   flex-direction: column;
 
-  display: none;
+  // display: none;
 
   .section__content{
     margin-top: 190px;
@@ -1813,11 +1813,11 @@ body{
   top: 0;
   background: $green_1;
   // z-index: 6;
-  right: -100vw;
+  right: -500vw;
   overflow: hidden;
   overflow-y: auto;
   
-  display: none;
+  // display: none;
 
   .section__content{
     display: flex;
