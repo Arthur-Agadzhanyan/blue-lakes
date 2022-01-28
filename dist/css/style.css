@@ -1504,7 +1504,7 @@ body {
 }
 
 .rooms .rooms__block {
-  height: 104vh;
+  min-height: 104vh;
   position: -webkit-sticky;
   position: sticky;
   top: 0;

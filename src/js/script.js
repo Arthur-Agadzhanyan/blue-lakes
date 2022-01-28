@@ -3,12 +3,14 @@
 @@include("gsap.min.js");
 
 AOS.init()
+gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollToPlugin);
 
 // State ----------------------------
 let activeScreen = 0
 
 // timeline
-const timeline = ()=> gsap.timeline({paused: true})
+const timeline = () => gsap.timeline({ paused: true })
 
 // dom elements ---------------------------------------------------------
 const navigation = document.querySelector('.navigation')
@@ -18,34 +20,35 @@ const navLogo = document.querySelector(".nav_logo")
 // animations --------------------------------------------------------------------------
 
 
-const aboutAnim = ()=> timeline().fromTo(".about_complex", 1.5, {right: "-100vw",top:0,left:"initial",background:"white"}, {duration: 10, right:0,display: 'block'  }).play();
+const aboutAnim = () => timeline().fromTo(".about_complex", 1.5, { right: "-100vw", top: 0, left: "initial", background: "white" }, { duration: 10, right: 0, display: 'block' }).play();
 
-const placesAnim_1 = ()=> timeline().fromTo("#places-slider", 1, 
-{transform: 'scale(0.4)' + ' translate(65%,35%)'}, 
-{duration: 1, transform: "scale(1)",transform:'scale(1)' + 'translate(0px,0px)'}).play();
+const placesAnim_1 = () => timeline().fromTo("", 1,
+  { transform: 'scale(0.4)' + ' translate(65%,35%)' },
+  { duration: 1, transform: "scale(1)", transform: 'scale(1)' + 'translate(0px,0px)' }).play();
 
-const placesAnim_2 = ()=> timeline().fromTo("#places-info", 1.5, 
-{transform: 'translateY(25%)'}, 
-{duration: 1, transform: 'translateY(0px)'}).play();
+const placesAnim_2 = () => timeline().fromTo("#places-info", 1.5,
+  { transform: 'translateY(25%)' },
+  { duration: 1, transform: 'translateY(0px)' }).play();
 
 
 
-const roomsAnim = () => timeline().fromTo(".rooms", 1.5, {right: "-100vw", left:'initial'}, {duration: 10, right:"0vw",display:'block' }).play();
+const roomsAnim = () => timeline().fromTo(".rooms", 1.5, { right: "-100vw", left: 'initial' }, { duration: 10, right: "0vw", display: 'block' }).play();
 
-const restaurantAnim = ()=> timeline().fromTo(".restaurant", 1.5, {right: "-100vw", left:'initial'}, {duration: 10, right:"0",display:'block' }).play();
+const restaurantAnim = () => timeline().fromTo(".restaurant", 1.5, { right: "-100vw", left: 'initial' }, { duration: 10, right: "0", display: 'block' }).play();
 
-const avocationsAnim = ()=> timeline().fromTo(".avocations", 1.5, {right: "-100vw", left:'initial'}, {duration: 10, right:"0",display:'flex' }).play();
+const avocationsAnim = () => timeline().fromTo(".avocations", 1.5, { right: "-100vw", left: 'initial' }, { duration: 10, right: "0", display: 'flex' }).play();
 
-const mapAnim = ()=> timeline().fromTo(".map", 1.5, {right: "-100vw", left:'initial'}, {duration: 10, right:"0",display:'flex' }).play();
+const mapAnim = () => timeline().fromTo(".map", 1.5, { right: "-100vw", left: 'initial' }, { duration: 10, right: "0", display: 'flex' }).play();
 
-const restaurantContentAnim = ()=>timeline().fromTo("#restaurant_content", 1.7, {transform: "translate(45%,0%)"}, {duration: 10,transform: "translate(0%,0%)" }).play();
+const restaurantContentAnim = () => timeline().fromTo("#restaurant_content", 1.7, { transform: "translate(45%,0%)" }, { duration: 10, transform: "translate(0%,0%)" }).play();
 
 //------------------
-const cleanNavs = ()=> navItems.forEach((item)=>{
+const cleanNavs = () => navItems.forEach((item) => {
   item.classList.remove("nav__item-active")
 })
 
-gsap.registerPlugin(ScrollTrigger);
+let container = document.querySelector(".container")
+
 
 let sections = gsap.utils.toArray(".section");
 
@@ -56,69 +59,181 @@ gsap.to(sections, {
     trigger: ".container",
     pin: true,
     scrub: 1,
-    snap: 1 / (sections.length - 1),
+    snap: {
+      snapTo: 1 / (sections.length - 1),
+      inertia: false
+    },
     // base vertical scrolling on how wide the container is so it feels more natural.
-    end: "+=3500",
+    end: () => "+=" + (container.offsetWidth*6 - innerWidth),
+    markers: true
   }
 });
 
-// // swipe----------------------------
 
-gsap.to('.text_bot',{
-            scrollTrigger: {
-              trigger: '.ab_cont',
-              scroller: '.about_complex',
-              start: 'center bottom '
-            },
-            duration: 1,
-            transform: "translate(0%,0%)"
-          })
+// gsap.to(container, {
+//   x: () => -(container.offsetWidth - innerWidth) + "px",
+//   ease: "none",
+//   scrollTrigger: {
+//     trigger: container,
+//     invalidateOnRefresh: true,
+//     pin: true,
+//     scrub: 1.6,
+//     end: () => "+=" + (container.offsetWidth - innerWidth)
+//   }
+// })
+
+
+
+navLogo.addEventListener('click',function (event) {
+  event.preventDefault();
+  gsap.to("html", { scrollTo:{y:0}, duration: 1.5});
+})
+
+navItems.forEach((navItem)=>{
+  navItem.addEventListener('click',function (event) {
+    event.preventDefault();
+
+    cleanNavs()
+    event.currentTarget.classList.add("nav__item-active")
+
+    let id = event.target.getAttribute('href')
+    var left = document.querySelector(id).offsetLeft;
+    gsap.to("html", { scrollTo: left, duration: 1.5});
+    
+    console.log(left)
+})
+})
+
+// navItems[0].addEventListener('click',function (event) {
+//     event.preventDefault();
+
+//     cleanNavs()
+//     event.currentTarget.classList.add("nav__item-active")
+
+//     let id = event.target.getAttribute('href')
+//     var left = document.querySelector(id).offsetLeft;
+//     gsap.to("html", { scrollTo: left, duration: 1.5});
+    
+//     console.log(left)
+// })
+
+// navItems[1].addEventListener('click',function (event) {
+//   event.preventDefault();
+
+//   cleanNavs()
+//   event.currentTarget.classList.add("nav__item-active")
+
+//   let id = event.target.getAttribute('href')
+//   var left = document.querySelector(id).offsetLeft;
+//   gsap.to("html", { scrollTo: 2200, duration: 1.5});
   
-          gsap.to('#aboutComplexSlider',{
-            scrollTrigger: {
-              trigger: '.ab_cont',
-              scroller: '.about_complex',
-              start: 'center bottom '
-            },
-            duration: 1,
-            transform: "translate(0%,0%)"
-          })
+//   console.log(left)
+// })
+
+// navItems[2].addEventListener('click',function (event) {
+//   event.preventDefault();
+
+//   cleanNavs()
+//   event.currentTarget.classList.add("nav__item-active")
+
+//   let id = event.target.getAttribute('href')
+//   var left = document.querySelector(id).offsetLeft;
+//   gsap.to("html", { scrollTo:500, duration: 1.5});
   
-          gsap.to('.places_img',{
-            scrollTrigger: {
-              trigger: '.places_img',
-              scroller: '.about_complex',
-              start: 'bottom bottom ',
-              end: 'bottom center',
-              scrub: 1,
-            },
-            duration: 1,
-            transform: "translate(0%,10%)"
-          })
+//   console.log(left)
+// })
+
+// navItems[3].addEventListener('click',function (event) {
+//   event.preventDefault();
+
+//   cleanNavs()
+//   event.currentTarget.classList.add("nav__item-active")
+
+//   let id = event.target.getAttribute('href')
+//   var left = document.querySelector(id).offsetLeft;
+//   gsap.to("html", { scrollTo:500, duration: 1.5});
   
-          gsap.to('.places_img_second',{
-            scrollTrigger: {
-              trigger: '.places_img',
-              scroller: '.about_complex',
-              start: 'bottom bottom ',
-              end: 'bottom center',
-              scrub: 1,
-            },
-            duration: 1,
-            transform: "translate(0%,15%)"
-          })
+//   console.log(left)
+// })
+
+// navItems[4].addEventListener('click',function (event) {
+//   event.preventDefault();
+
+//   cleanNavs()
+//   event.currentTarget.classList.add("nav__item-active")
+
+//   let id = event.target.getAttribute('href')
+//   var left = document.querySelector(id).offsetLeft;
+//   gsap.to("html", { scrollTo:500, duration: 1.5});
   
-          gsap.to('.places_img_third',{
-            scrollTrigger: {
-              trigger: '.places_img',
-              scroller: '.about_complex',
-              start: 'bottom bottom ',
-              end: 'bottom center',
-              scrub: 1,
-            },
-            duration: 1,
-            transform: "translate(0%,5%)"
-          })
+//   console.log(left)
+// })
+
+
+// $(".menu-item").on("click", function (event) {
+//   event.preventDefault();
+//   var id = $(this).attr('href');
+//   var left = $(id)[0].offsetLeft;
+//   gsap.to("html", { scrollTo: left, duration: 1.5});
+// });
+
+// // scroll triggers----------------------------
+
+gsap.to('.text_bot', {
+  scrollTrigger: {
+    trigger: '.ab_cont',
+    scroller: '.about_complex',
+    start: 'center bottom '
+  },
+  duration: 1,
+  transform: "translate(0%,0%)"
+})
+
+gsap.to('#aboutComplexSlider', {
+  scrollTrigger: {
+    trigger: '.ab_cont',
+    scroller: '.about_complex',
+    start: 'center bottom '
+  },
+  duration: 1,
+  transform: "translate(0%,0%)"
+})
+
+gsap.to('.places_img', {
+  scrollTrigger: {
+    trigger: '.places_img',
+    scroller: '.about_complex',
+    start: 'bottom bottom ',
+    end: 'bottom center',
+    scrub: 1,
+  },
+  duration: 1,
+  transform: "translate(0%,10%)"
+})
+
+gsap.to('.places_img_second', {
+  scrollTrigger: {
+    trigger: '.places_img',
+    scroller: '.about_complex',
+    start: 'bottom bottom ',
+    end: 'bottom center',
+    scrub: 1,
+  },
+  duration: 1,
+  transform: "translate(0%,15%)"
+})
+
+gsap.to('.places_img_third', {
+  scrollTrigger: {
+    trigger: '.places_img',
+    scroller: '.about_complex',
+    start: 'bottom bottom ',
+    end: 'bottom center',
+    scrub: 1
+  },
+  duration: 1,
+  transform: "translate(0%,5%)"
+})
 
 // const swipeIntro = ()=>{
 //   const introAnim_1 = timeline().fromTo(".intro", 1.5, {left: "0",right:"0"}, {duration: 10, left:"-100vw",display:'none' });
@@ -293,7 +408,7 @@ gsap.to('.text_bot',{
 
 //         activeScreen = 1
 //     }
-    
+
 // })
 
 // navItems[1].addEventListener('click',(e)=>{
@@ -322,15 +437,15 @@ gsap.to('.text_bot',{
 //           closeMap()
 //           reverceRooms()
 //         }
-        
+
 //         roomsAnim()
 
 //         navigation.classList.add('navigation-white')
-        
+
 
 //         activeScreen = 2
 //     }
-    
+
 // })
 
 // navItems[2].addEventListener('click',(e)=>{
@@ -362,7 +477,7 @@ gsap.to('.text_bot',{
 
 //       activeScreen = 3
 //   }
-  
+
 // })
 
 // navItems[3].addEventListener('click',(e)=>{
@@ -386,7 +501,7 @@ gsap.to('.text_bot',{
 //         closeMap()
 //         reverceAvocations('.avocations');
 //       }
-      
+
 //       navigation.classList.remove('navigation-white')
 //       avocationsAnim()
 //       timeline().fromTo(".avocation_block", 1.3, {height: "0%"}, {duration: 10, height: "auto"}).play();
@@ -427,61 +542,61 @@ gsap.to('.text_bot',{
 // Sliders ---------------------------------------------------------------
 
 const placesSlider = new Swiper('.placesSlider', {
-    loop:true,
-    speed: 1500,
-  
-    pagination: {
-      el: '.swiper-pagination',
-    },
-  
-    navigation: {
-      nextEl: '#places-next',
-      prevEl: '#places-prev',
-    },
-  
-    scrollbar: {
-      el: '.swiper-scrollbar',
-    },
+  loop: true,
+  speed: 1500,
+
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  navigation: {
+    nextEl: '#places-next',
+    prevEl: '#places-prev',
+  },
+
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
 });
 
 const aboutComplex = new Swiper('.aboutComplex', {
-    loop:true,
-    speed: 1500,
-  
-    pagination: {
-      el: '.swiper-pagination',
-    },
+  loop: true,
+  speed: 1500,
 
-    navigation: {
-      nextEl: '#about-next',
-      prevEl: '#about-prev',
-    },
-  
-    scrollbar: {
-      el: '.swiper-scrollbar',
-    },
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  navigation: {
+    nextEl: '#about-next',
+    prevEl: '#about-prev',
+  },
+
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
 });
 
 const standartComplex = new Swiper('.standartRoom', {
-    loop:true,
-    speed: 1500,
-  
-    pagination: {
-      el: '.swiper-pagination',
-    },
+  loop: true,
+  speed: 1500,
 
-    navigation: {
-      nextEl: '#standart-next',
-      prevEl: '#standart-prev',
-    },
-  
-    scrollbar: {
-      el: '.swiper-scrollbar',
-    },
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  navigation: {
+    nextEl: '#standart-next',
+    prevEl: '#standart-prev',
+  },
+
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
 });
 
 const semiDeluxeRoom = new Swiper('.semiDeluxeRoom', {
-  loop:true,
+  loop: true,
   speed: 1500,
 
   pagination: {
@@ -499,7 +614,7 @@ const semiDeluxeRoom = new Swiper('.semiDeluxeRoom', {
 });
 
 const deluxeRoom = new Swiper('.deluxeRoom', {
-  loop:true,
+  loop: true,
   speed: 1500,
 
   pagination: {
@@ -517,7 +632,7 @@ const deluxeRoom = new Swiper('.deluxeRoom', {
 });
 
 const restaurantSlider = new Swiper('.restaurantSlider', {
-  loop:true,
+  loop: true,
   speed: 1500,
 
   pagination: {
@@ -540,16 +655,16 @@ const restaurantSlider = new Swiper('.restaurantSlider', {
 const navbarBtn = document.querySelector('#navbar__btn')
 const mobileBar = document.querySelector('.mobile_bar')
 
-navbarBtn.addEventListener('click', (e)=>{
+navbarBtn.addEventListener('click', (e) => {
   navbarBtn.classList.toggle('burger_active')
   mobileBar.classList.toggle('mb_bar_closed')
-  if(mobileBar.classList.contains('bot_0')){
+  if (mobileBar.classList.contains('bot_0')) {
     mobileBar.classList.remove("bot_0")
-  }else{
-      setTimeout(()=>{
-          mobileBar.classList.add("bot_0")
-      },500)
-  } 
+  } else {
+    setTimeout(() => {
+      mobileBar.classList.add("bot_0")
+    }, 500)
+  }
 })
 
 // modals
@@ -562,50 +677,50 @@ const modalThanks = document.querySelector(".modal__thanks")
 
 const closeModals = document.querySelectorAll(".close_modal")
 
-bellBtns.forEach(el=>{
-  el.addEventListener("click",()=>{
-      bellModal.style.display = "flex"
-      document.body.style.overflowY = "hidden"
-      setTimeout(()=>bellModal.style.opacity = "1",100)
-      return
+bellBtns.forEach(el => {
+  el.addEventListener("click", () => {
+    bellModal.style.display = "flex"
+    document.body.style.overflowY = "hidden"
+    setTimeout(() => bellModal.style.opacity = "1", 100)
+    return
   })
 })
 
-thanksBtn.onsubmit = (e)=>{
+thanksBtn.onsubmit = (e) => {
   e.preventDefault()
   bellModal.style.opacity = "0"
   document.body.style.overflowY = "auto"
-  setTimeout(()=>bellModal.style.display = "none",300)
+  setTimeout(() => bellModal.style.display = "none", 300)
 
   modalThanks.style.opacity = "1"
   document.body.style.overflowY = "hidden"
-  setTimeout(()=>modalThanks.style.display = "flex",300)
+  setTimeout(() => modalThanks.style.display = "flex", 300)
   return
 }
 
-closeModals.forEach(el=>{
-    el.addEventListener("click",()=>{
-        bellModal.style.opacity = "0"
-        document.body.style.overflowY = "auto"
-        setTimeout(()=>bellModal.style.display = "none",300)
+closeModals.forEach(el => {
+  el.addEventListener("click", () => {
+    bellModal.style.opacity = "0"
+    document.body.style.overflowY = "auto"
+    setTimeout(() => bellModal.style.display = "none", 300)
 
-        modalThanks.style.opacity = "0"
-        document.body.style.overflowY = "auto"
-        setTimeout(()=>modalThanks.style.display = "none",300)
+    modalThanks.style.opacity = "0"
+    document.body.style.overflowY = "auto"
+    setTimeout(() => modalThanks.style.display = "none", 300)
 
-        return
-    })
+    return
+  })
 })
 
 const mbNavItem = document.querySelectorAll('.mb_nav__item')
 
-mbNavItem.forEach((item)=>{
-  item.addEventListener('click',(e)=>{
+mbNavItem.forEach((item) => {
+  item.addEventListener('click', (e) => {
     navbarBtn.classList.remove('burger_active')
     mobileBar.classList.add('mb_bar_closed')
 
-    if(mobileBar.classList.contains('bot_0')){
-        mobileBar.classList.remove("bot_0")
+    if (mobileBar.classList.contains('bot_0')) {
+      mobileBar.classList.remove("bot_0")
     }
 
   })

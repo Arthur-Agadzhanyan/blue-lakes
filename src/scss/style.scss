@@ -561,6 +561,9 @@ body{
     padding-right: 60px;
 
     
+    // #places-slider{
+    //   transform: scale(0.4) translate(65%,35%);
+    // }
 
     .content__slider {
       min-width: 0;
@@ -969,7 +972,7 @@ body{
 
   .rooms__block{
     // position: relative;
-    height: 104vh;
+    min-height: 104vh;
     position: sticky;
     top: 0;
     background: $green_1;
