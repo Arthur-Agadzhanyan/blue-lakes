@@ -93,7 +93,6 @@ gsap.to(".navigation", {
       navigation.classList.add('navigation-white');
       navItems[1].classList.add("nav__item-active")
     },
-    markers: true
   }, 
   duration: 2, 
 });
@@ -113,7 +112,6 @@ gsap.to(".navigation", {
       navigation.classList.add('navigation-white');
       navItems[4].classList.add("nav__item-active")
     },
-    markers: true
   }, 
   duration: 2, 
 });
@@ -132,7 +130,6 @@ gsap.to(".navigation", {
       navigation.classList.remove('navigation-white');
       navItems[2].classList.add("nav__item-active")
     },
-    markers: true
   }, 
   duration: 2, 
 });
@@ -149,7 +146,6 @@ gsap.to(".navigation", {
       cleanNavs()
       navigation.classList.remove('navigation-white')
     },
-    markers: true
   }, 
   duration: 2, 
 });
@@ -168,7 +164,6 @@ gsap.to(".navigation", {
       navigation.classList.remove('navigation-white');
       navItems[0].classList.add("nav__item-active")
     },
-    markers: true
   }, 
   duration: 2, 
 });
@@ -187,7 +182,6 @@ gsap.to(".navigation", {
       navigation.classList.remove('navigation-white');
       navItems[3].classList.add("nav__item-active")
     },
-    markers: true
   }, 
   duration: 2, 
 });
