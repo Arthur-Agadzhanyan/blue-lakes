@@ -35,61 +35,188 @@ const cleanNavs = () => navItems.forEach((item) => {
   item.classList.remove("nav__item-active")
 })
 
-let container = document.querySelector(".container")
+// let container = document.querySelector(".container")
+// ScrollTrigger.defaults({
+//   toggleActions: "restart pause resume pause",
+//   scroller: ".container"
+// });
 
+// let sections = gsap.utils.toArray(".section");
 
-let sections = gsap.utils.toArray(".section");
+// const scrollTween = gsap.to(sections, {
+//   xPercent: -100 * (sections.length - 1),
+//   ease: "none",
+//   scrollTrigger: {
+//     trigger: ".container",
+//     pin: true,
+//     scrub: 1,
+//     snap: {
+//       snapTo: 1 / (sections.length - 1),
+//       inertia: false
+//     },
+//     // base vertical scrolling on how wide the container is so it feels more natural.
+//     end: () => "+=" + (container.offsetWidth * 6 - innerWidth)
+//   }
+// });
 
-const scrollTween = gsap.to(sections, {
-  xPercent: -100 * (sections.length - 1),
-  ease: "none",
+// ScrollTrigger.create({
+//   trigger: ".avocations",
+//   containerAnimation: '.container',
+//   toggleClass: "active",
+//   start: "top center",
+//   id: "3",
+//   markers: true
+// });
+
+gsap.to(".avocations", {
   scrollTrigger: {
-    trigger: ".container",
-    pin: true,
-    scrub: 1,
-    snap: {
-      snapTo: 1 / (sections.length - 1),
-      inertia: false
+    trigger: '.avocations',
+    scroller: '.container',
+    start: 'top center',
+    toggleClass: "active"
+  }, 
+  duration: 2, 
+});
+
+
+gsap.to(".navigation", {
+  scrollTrigger: {
+    trigger: '.rooms',
+    scroller: '.container',
+    onEnter: () => {
+      cleanNavs()
+      navigation.classList.add('navigation-white');
+      navItems[1].classList.add("nav__item-active")
     },
-    // base vertical scrolling on how wide the container is so it feels more natural.
-    end: () => "+=" + (container.offsetWidth * 6 - innerWidth)
-  }
+    onEnterBack: () => {
+      cleanNavs()
+      navigation.classList.add('navigation-white');
+      navItems[1].classList.add("nav__item-active")
+    },
+    markers: true
+  }, 
+  duration: 2, 
 });
 
-ScrollTrigger.create({
-  trigger: ".avocations",
-  containerAnimation: scrollTween,
-  toggleClass: "active",
-  start: "left center",
-  id: "3"
+gsap.to(".navigation", {
+  scrollTrigger: {
+    trigger: '.map',
+    scroller: '.container',
+    start: "top center",
+    onEnter: () => {
+      cleanNavs()
+      navigation.classList.add('navigation-white');
+      navItems[4].classList.add("nav__item-active")
+    },
+    onEnterBack: () => {
+      cleanNavs()
+      navigation.classList.add('navigation-white');
+      navItems[4].classList.add("nav__item-active")
+    },
+    markers: true
+  }, 
+  duration: 2, 
 });
 
+gsap.to(".navigation", {
+  scrollTrigger: {
+    trigger: '.restaurant',
+    scroller: '.container',
+    onEnter: () => {
+      cleanNavs()
+      navigation.classList.remove('navigation-white');
+      navItems[2].classList.add("nav__item-active")
+    },
+    onEnterBack: () => {
+      cleanNavs()
+      navigation.classList.remove('navigation-white');
+      navItems[2].classList.add("nav__item-active")
+    },
+    markers: true
+  }, 
+  duration: 2, 
+});
 
-navLogo.addEventListener('click',function (event) {
-  event.preventDefault();
-  cleanNavs()
-  gsap.to("html", { scrollTo:{y:0}, duration: 1.5});
-})
+gsap.to(".navigation", {
+  scrollTrigger: {
+    trigger: '.intro',
+    scroller: '.container',
+    onEnter: () => {
+      cleanNavs()
+      navigation.classList.remove('navigation-white');
+    },
+    onEnterBack: () => {
+      cleanNavs()
+      navigation.classList.remove('navigation-white')
+    },
+    markers: true
+  }, 
+  duration: 2, 
+});
 
-navItems.forEach((navItem)=>{
-  navItem.addEventListener('click',function (event) {
-    event.preventDefault();
+gsap.to(".navigation", {
+  scrollTrigger: {
+    trigger: '.about_complex',
+    scroller: '.container',
+    onEnter: () => {
+      cleanNavs()
+      navigation.classList.remove('navigation-white');
+      navItems[0].classList.add("nav__item-active")
+    },
+    onEnterBack: () => {
+      cleanNavs()
+      navigation.classList.remove('navigation-white');
+      navItems[0].classList.add("nav__item-active")
+    },
+    markers: true
+  }, 
+  duration: 2, 
+});
 
-    cleanNavs()
-    event.currentTarget.classList.add("nav__item-active")
+gsap.to(".navigation", {
+  scrollTrigger: {
+    trigger: '.avocations',
+    scroller: '.container',
+    onEnter: () => {
+      cleanNavs()
+      navigation.classList.remove('navigation-white');
+      navItems[3].classList.add("nav__item-active")
+    },
+    onEnterBack: () => {
+      cleanNavs()
+      navigation.classList.remove('navigation-white');
+      navItems[3].classList.add("nav__item-active")
+    },
+    markers: true
+  }, 
+  duration: 2, 
+});
 
-    let id = event.target.getAttribute('href')
-    var left = document.querySelector(id).offsetLeft;
-    gsap.to("html", { scrollTo: left, duration: 1.5});
+// navLogo.addEventListener('click',function (event) {
+//   event.preventDefault();
+//   cleanNavs()
+//   gsap.to("html", { scrollTo:{y:0}, duration: 1.5});
+// })
+
+// navItems.forEach((navItem)=>{
+//   navItem.addEventListener('click',function (event) {
+//     event.preventDefault();
+
+//     cleanNavs()
+//     event.currentTarget.classList.add("nav__item-active")
+
+//     let id = event.target.getAttribute('href')
+//     var left = document.querySelector(id).offsetLeft;
+//     gsap.to("html", { scrollTo: left, duration: 1.5});
     
-    console.log(left)
-})
-})
+//     console.log(left)
+// })
+// })
 
 gsap.to('.text_bot', {
   scrollTrigger: {
     trigger: '.ab_cont',
-    scroller: '.about_complex',
+    scroller: '.container',
     start: 'center bottom '
   },
   duration: 1,
@@ -99,7 +226,7 @@ gsap.to('.text_bot', {
 gsap.to('#aboutComplexSlider', {
   scrollTrigger: {
     trigger: '.ab_cont',
-    scroller: '.about_complex',
+    scroller: '.container',
     start: 'center bottom '
   },
   duration: 1,
@@ -109,7 +236,7 @@ gsap.to('#aboutComplexSlider', {
 gsap.to('.places_img', {
   scrollTrigger: {
     trigger: '.places_img',
-    scroller: '.about_complex',
+    scroller: '.container',
     start: 'bottom bottom ',
     end: 'bottom center',
     scrub: 1,
@@ -121,7 +248,7 @@ gsap.to('.places_img', {
 gsap.to('.places_img_second', {
   scrollTrigger: {
     trigger: '.places_img',
-    scroller: '.about_complex',
+    scroller: '.container',
     start: 'bottom bottom ',
     end: 'bottom center',
     scrub: 1,
@@ -133,7 +260,7 @@ gsap.to('.places_img_second', {
 gsap.to('.places_img_third', {
   scrollTrigger: {
     trigger: '.places_img',
-    scroller: '.about_complex',
+    scroller: '.container',
     start: 'bottom bottom ',
     end: 'bottom center',
     scrub: 1
@@ -143,19 +270,19 @@ gsap.to('.places_img_third', {
 })
 
 
-  window.addEventListener('scroll',()=>{
-    for (let i = 1; i < 6; i++) {
-      if(window.scrollY == innerWidth * i){
-        cleanNavs()
-        if(i==2 || i==5){
-          navigation.classList.add('navigation-white')
-        }else{
-          navigation.classList.remove('navigation-white')
-        }
-        navItems[i-1].classList.add("nav__item-active")
-      }
-    }
-  })
+  // window.addEventListener('scroll',()=>{
+  //   for (let i = 1; i < 6; i++) {
+  //     if(window.scrollY == innerHeight * i){
+  //       cleanNavs()
+  //       if(i==2 || i==5){
+  //         navigation.classList.add('navigation-white')
+  //       }else{
+  //         navigation.classList.remove('navigation-white')
+  //       }
+  //       navItems[i-1].classList.add("nav__item-active")
+  //     }
+  //   }
+  // })
 }
 
 // Sliders ---------------------------------------------------------------

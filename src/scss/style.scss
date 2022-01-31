@@ -25,9 +25,10 @@ html {
 body{
   padding: 0;
   margin: 0;
-  height: 100vh;
+  min-height: 101vh;
   width: 100vw;
   overflow-x: hidden;
+  position: fixed;
 
   font-family: "Bahnschrift",sans-serif;
 
@@ -36,16 +37,33 @@ body{
     width: auto;
     overflow: auto;
     overflow-x: hidden !important;
+    
+  }
+}
+
+.container{
+  max-height: 100vh;
+	overflow-y: scroll;
+  overflow-x: hidden;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+
+  @media screen and (max-width:1100px) {
+    scroll-snap-type: unset;
+    overflow-y: visible !important;
+    padding-top: 70px;
   }
 }
 
 .section{
-  position: absolute;
+  position: relative;
   width: 100vw;
-  height: 100vh;
   display: flex;
   flex-direction: column;
+  scroll-snap-align: start;
+  min-height: 100vh;
   
+
   z-index: 1;
 
   @media screen and (max-width: 1100px){
@@ -224,7 +242,7 @@ body{
 
 .intro{
   // z-index: 1;
-  overflow: hidden;
+  // overflow: hidden;
 
   .section__content{
     margin-top: 240px;
@@ -520,9 +538,9 @@ body{
 
 // О комплексе =========================
 .about_complex{
-  right: -100vw;
-  overflow-y: auto;
-  overflow-x: hidden;
+  // right: -100vw;
+  // overflow-y: auto;
+  // overflow-x: hidden;
   
   // z-index: 2;
   padding-bottom: 95px;
@@ -543,6 +561,7 @@ body{
   }
 
   .places{
+    position: relative;
     padding-bottom: 5vh;
     
 
@@ -947,12 +966,13 @@ body{
 
 // Номера ===========================
 .rooms {
-  right: -200vw;
+  position: relative;
+  // right: -200vw;
   overflow-y: auto;
   // z-index: 3;
   background: $green_1;
-
   // display: none;
+  margin-top: 5px;
 
   .slider-arrow{
     &::after{
@@ -972,7 +992,7 @@ body{
 
   .rooms__block{
     // position: relative;
-    min-height: 104vh;
+    min-height: 100vh;
     position: sticky;
     top: 0;
     background: $green_1;
@@ -981,10 +1001,11 @@ body{
     left: 0;
     right: 0;
     position: sticky;
-    overflow-y: visible;
+    overflow-y: auto;
     // overflow-y: auto;
     overflow-x:  hidden;
     padding-bottom: 20px;
+    padding-top: 20px;
 
     &::-webkit-scrollbar {
       width: 0;
@@ -1433,6 +1454,7 @@ body{
 
     @media screen and (max-width: 1100px) {
       flex-direction: column;
+      padding-top: 0px;
     }
 
     @media screen and (max-width: 1300px){
@@ -1456,11 +1478,12 @@ body{
 
 // Ресторан =========================
 .restaurant {
-  right: -300vw;
+  // right: -300vw;
   position: relative;
   background: #fff;
   // z-index: 4;
   overflow: hidden;
+  min-height: 106vh;
 
   // display: none;
 
@@ -1661,7 +1684,7 @@ body{
 
 // Развлечения ==========================
 .avocations{
-  right: -400vw;
+  // right: -400vw;
   top: 0;
   background: white;
   // z-index: 5;
@@ -1834,13 +1857,15 @@ body{
 
 // Как нас найти =========================
 .map{
-  top: 0;
+  // top: 0;
   background: $green_1;
   // z-index: 6;
-  right: -500vw;
+  // right: -500vw;
   overflow: hidden;
   overflow-y: auto;
-  
+  overflow-x: hidden;
+  min-height: 102vh;
+
   // display: none;
 
   .section__content{

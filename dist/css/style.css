@@ -1014,16 +1014,25 @@ html {
 body {
   padding: 0;
   margin: 0;
-  height: 100vh;
+  min-height: 101vh;
   width: 100vw;
   overflow-x: hidden;
+  position: fixed;
   font-family: "Bahnschrift",sans-serif;
 }
 
+.container {
+  max-height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  -ms-scroll-snap-type: y mandatory;
+      scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
 .section {
-  position: absolute;
+  position: relative;
   width: 100vw;
-  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1031,6 +1040,8 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  scroll-snap-align: start;
+  min-height: 100vh;
   z-index: 1;
 }
 
@@ -1106,10 +1117,6 @@ body {
 
 .sm {
   display: none !important;
-}
-
-.intro {
-  overflow: hidden;
 }
 
 .intro .section__content {
@@ -1226,9 +1233,6 @@ body {
 }
 
 .about_complex {
-  right: -100vw;
-  overflow-y: auto;
-  overflow-x: hidden;
   padding-bottom: 95px;
 }
 
@@ -1243,6 +1247,7 @@ body {
 }
 
 .about_complex .places {
+  position: relative;
   padding-bottom: 5vh;
 }
 
@@ -1487,9 +1492,10 @@ body {
 }
 
 .rooms {
-  right: -200vw;
+  position: relative;
   overflow-y: auto;
   background: #306261;
+  margin-top: 5px;
 }
 
 .rooms .slider-arrow::after {
@@ -1504,7 +1510,7 @@ body {
 }
 
 .rooms .rooms__block {
-  min-height: 104vh;
+  min-height: 100vh;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
@@ -1512,9 +1518,10 @@ body {
   left: 0;
   right: 0;
   position: sticky;
-  overflow-y: visible;
+  overflow-y: auto;
   overflow-x: hidden;
   padding-bottom: 20px;
+  padding-top: 20px;
 }
 
 .rooms .rooms__block::-webkit-scrollbar {
@@ -1841,10 +1848,10 @@ body {
 }
 
 .restaurant {
-  right: -300vw;
   position: relative;
   background: #fff;
   overflow: hidden;
+  min-height: 106vh;
 }
 
 .restaurant .restaurant__content {
@@ -1946,7 +1953,6 @@ body {
 }
 
 .avocations {
-  right: -400vw;
   top: 0;
   background: white;
   min-height: 100vh;
@@ -2046,11 +2052,11 @@ body {
 }
 
 .map {
-  top: 0;
   background: #306261;
-  right: -500vw;
   overflow: hidden;
   overflow-y: auto;
+  overflow-x: hidden;
+  min-height: 102vh;
 }
 
 .map .section__content {
@@ -2591,6 +2597,11 @@ body {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000000000;
   }
 
   .mobile_bar {
@@ -2608,6 +2619,13 @@ body {
     width: auto;
     overflow: auto;
     overflow-x: hidden !important;
+  }
+
+  .container {
+    -ms-scroll-snap-type: unset;
+        scroll-snap-type: unset;
+    overflow-y: visible !important;
+    padding-top: 70px;
   }
 
   .section {
@@ -2864,6 +2882,7 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    padding-top: 0px;
   }
 
   .restaurant .restaurant__content .content__slider {
