@@ -35,39 +35,6 @@ const cleanNavs = () => navItems.forEach((item) => {
   item.classList.remove("nav__item-active")
 })
 
-// let container = document.querySelector(".container")
-// ScrollTrigger.defaults({
-//   toggleActions: "restart pause resume pause",
-//   scroller: ".container"
-// });
-
-// let sections = gsap.utils.toArray(".section");
-
-// const scrollTween = gsap.to(sections, {
-//   xPercent: -100 * (sections.length - 1),
-//   ease: "none",
-//   scrollTrigger: {
-//     trigger: ".container",
-//     pin: true,
-//     scrub: 1,
-//     snap: {
-//       snapTo: 1 / (sections.length - 1),
-//       inertia: false
-//     },
-//     // base vertical scrolling on how wide the container is so it feels more natural.
-//     end: () => "+=" + (container.offsetWidth * 6 - innerWidth)
-//   }
-// });
-
-// ScrollTrigger.create({
-//   trigger: ".avocations",
-//   containerAnimation: '.container',
-//   toggleClass: "active",
-//   start: "top center",
-//   id: "3",
-//   markers: true
-// });
-
 gsap.to(".avocations", {
   scrollTrigger: {
     trigger: '.avocations',

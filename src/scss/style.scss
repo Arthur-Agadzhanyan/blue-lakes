@@ -176,7 +176,12 @@ body{
 }
 
 .slider-arrow{
+  outline: none;
+  background: transparent;
+  width: 0px;
+
   &::after{
+    outline: none;
     color: #fff;
     font-size: 12px;
     font-weight: 700;
@@ -211,18 +216,18 @@ body{
 
 .slider-next{
   &::after{
-    margin-right: -52px;
+    margin-right: -25px;
     @media screen and (max-width: 1100px) {
-      margin-right: -42px;
+      margin-right: -16px;
     }
   }
 }
 
 .slider-prev{
   &::after{
-    margin-left: -52px;
+    margin-left: -25px;
     @media screen and (max-width: 1100px) {
-      margin-left: -42px;
+      margin-left: -18px;
     }
   }
 }
