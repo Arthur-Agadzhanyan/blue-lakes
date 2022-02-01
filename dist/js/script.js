@@ -179,27 +179,6 @@ gsap.to(".navigation", {
   duration: 2, 
 });
 
-// navLogo.addEventListener('click',function (event) {
-//   event.preventDefault();
-//   cleanNavs()
-//   gsap.to("html", { scrollTo:{y:0}, duration: 1.5});
-// })
-
-// navItems.forEach((navItem)=>{
-//   navItem.addEventListener('click',function (event) {
-//     event.preventDefault();
-
-//     cleanNavs()
-//     event.currentTarget.classList.add("nav__item-active")
-
-//     let id = event.target.getAttribute('href')
-//     var left = document.querySelector(id).offsetLeft;
-//     gsap.to("html", { scrollTo: left, duration: 1.5});
-    
-//     console.log(left)
-// })
-// })
-
 gsap.to('.text_bot', {
   scrollTrigger: {
     trigger: '.ab_cont',
@@ -255,21 +234,6 @@ gsap.to('.places_img_third', {
   duration: 1,
   transform: "translate(0%,5%)"
 })
-
-
-  // window.addEventListener('scroll',()=>{
-  //   for (let i = 1; i < 6; i++) {
-  //     if(window.scrollY == innerHeight * i){
-  //       cleanNavs()
-  //       if(i==2 || i==5){
-  //         navigation.classList.add('navigation-white')
-  //       }else{
-  //         navigation.classList.remove('navigation-white')
-  //       }
-  //       navItems[i-1].classList.add("nav__item-active")
-  //     }
-  //   }
-  // })
 }
 
 // Sliders ---------------------------------------------------------------
